@@ -1,0 +1,14 @@
+.ccd-posts-list{ padding: 3px 0; }
+.ccd-posts-list p{ padding: 0; margin: 0; }
+.ccd-posts-list .ccd-recent-post:hover .ccd-post-count{ border-color: #DDD; }
+.ccd-posts-list .ccd-post-count p{ line-height: 60px; text-align: center; font-size: 25px; font-weight: 700; }
+.ccd-posts-list .ccd-post-display{ padding: 0 0 12px; }
+.ccd-posts-list .ccd-post-display .recent-posts-date{ font-weight: 300; color: #777; font-size: 13px; line-height: 20px; font-family: 'Muli', Arial, Helvetica, sans-serif; }
+.ccd-posts-list .ccd-post-display .recent-posts-title{ font-weight: 900; color: #000; font-size: 18px; line-height: 25px; font-family: 'Muli', Arial, Helvetica, sans-serif; }
+.ccd-archive-posts h3{ clear: left; font-family: 'Roboto Condensed', Arial, Helvetica, sans-serif; font-size: 48px; margin: 0; float: left; width: 105px; padding: 0; line-height: 65px; color: #BFBFBF; }
+.ccd-archive-posts .archive-list { margin: 2px 0 15px 0; padding: 5px 0 0 0; left: 0; float: right; width: calc( 100% - 120px ); min-height: 75px; }
+.ccd-archive-posts .archive-list a { border-bottom: 1px dotted #918f8f; color:#4c4c4c; display: block; line-height: 21px; height:17px; }
+.ccd-archive-posts .archive-list li { height: 21px; list-style: none; margin: 0 0 2px 0; }
+.ccd-archive-posts .archive-list span { background: #F6F6F6; padding: 0 2px 1px 0; }
+.ccd-archive-posts .archive-list .archive-month { float: left; padding-right: 4px; }
+.ccd-archive-posts .archive-list .archive-count { float: right; padding-left: 6px; }

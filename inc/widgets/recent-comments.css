@@ -1,0 +1,9 @@
+.ccd-comments-list{ padding: 6px; }
+.ccd-comments-list p{ padding: 0; margin: 0; }
+.ccd-comments-list .ccd-comment-gravatar, .ccd-comments-list .ccd-comment-display{ display: inline-block; margin: 0 -2px; vertical-align: top; box-sizing: border-box; }
+.ccd-comments-list .ccd-comment-gravatar{ width: 60px; height: 60px; } 
+.ccd-comments-list .ccd-comment-gravatar img{ border: solid 2px #EFEFEF; border-radius: 50%; }
+.ccd-comments-list .ccd-comment-gravatar .no-comment img{ border: none; border-radius: 0; }
+.ccd-comments-list .ccd-comment-display{ padding: 0 0 12px 19px; width: calc( 100% - 60px ); min-height: 76px; /* 64px gravatar (+ border) height, plus bottom padding */ }
+.ccd-comments-list .ccd-comment-display .recent-comment-author{ font-size: 13px; }
+.ccd-comments-list .ccd-comment-display .recent-comment-author .author-name{ font-weight: 700; color: #6D1F39; }

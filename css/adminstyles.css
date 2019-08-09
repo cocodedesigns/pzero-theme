@@ -1,0 +1,10 @@
+#dashboard_right_now .ama-published-count a:before, #dashboard_right_now .ama-published-count span:before { content: "\f059"; font-family: "Font Awesome 5 Free"; font-weight: 900; padding: 0 8px 0 0; font-size: 18px; }
+#dashboard_right_now .ama-pending-count a:before, #dashboard_right_now .ama-pending-count span:before { content: "\f059"; font-family: "Font Awesome 5 Free"; font-weight: 400; padding: 0 8px 0 0; font-size: 18px; }
+#adminmenu #menu-posts-ama .wp-menu-image::before{ content: "\f128"; font-family: "Font Awesome 5 Free"; font-weight: 900; }
+
+/* CMB2 */
+/* Link Box Overrides */
+.cmb2-id--ccdclient-themesettings-sitefooter-left-link-url .text, .cmb2-id--ccdclient-themesettings-sitefooter-left-link-url .blank, .cmb2-id--ccdclient-themesettings-sitefooter-right-link-url .text, .cmb2-id--ccdclient-themesettings-sitefooter-right-link-url .blank{ display: none; }
+
+/* Job Vacancies */
+.cmb2-id--ccdclient-themesettings-cpts-vacancies-applicationform .blank{ display: none; }

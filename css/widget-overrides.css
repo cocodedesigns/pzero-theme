@@ -1,0 +1,48 @@
+/* User Profile - SOME ELEMENTS CONTROLLED BY EQCSS */
+.ccdClient-userProfile .userProfile-profileData-profileSNS li{ display: block; float: left; height: 56px; }
+.ccdClient-userProfile .userProfile-profileCard-cardData{ background-color: rgba( 0,0,0,.75); color: #FFF; }
+.ccdClient-userProfile .userProfile-profileData-profileSNS-5 li{ width: 20%; }
+.ccdClient-userProfile .userProfile-profileData-profileSNS-4 li{ width: 25%; }
+.ccdClient-userProfile .userProfile-profileData-profileSNS-3 li{ width: calc( 100% / 3 ); }
+.ccdClient-userProfile .userProfile-profileData-profileSNS-2 li{ width: 50%; }
+.ccdClient-userProfile .userProfile-profileData-profileSNS-1 li{ width: 100%; }
+.ccdClient-userProfile .userProfile-profileContainer[min-width~="800px"]{ border: solid 12px rgba(0,0,0,.75); }
+.ccdClient-userProfile .userProfile-profileContainer[max-width~="799px"] .userProfile-profileCard{ position: relative; height: 100%; width: 100%; z-index: 2; }
+.ccdClient-userProfile .userProfile-profileContainer[max-width~="799px"] .userProfile-profileCard .userProfile-profileCard-imageSpacer{ width: 100%; padding-bottom: 120%; }
+.ccdClient-userProfile .userProfile-profileContainer[max-width~="799px"] .userProfile-profileData-profileSNS ul{ position: absolute; left: 0; right: 0; top: -56px; bottom: 0; }
+.ccdClient-userProfile .userProfile-profileContainer[max-width~="799px"] .userProfile-profileCard-cardData{ padding: 32px 24px; }
+.ccdClient-userProfile .userProfile-profileContainer[max-width~="799px"] .userProfile-imageWrap{ position: absolute; left: 0; top: 0; bottom: 0; right: 0; z-index: 1; }
+
+/* Icon Box */
+/* Block Widget */
+.ccdClient-iconBox-widget .ccdClient-iconBox-icon, .bulletedlist_widget .bulletedlist-icon{ background-color: #54301A; }
+.ccdClient-iconBox-widget.ccdClient-iconBox-blockStyle .ccdClient-iconBox-icon{ border-color: #54301A; }
+.ccdClient-iconBox-widget.ccdClient-iconBox-blockStyle .ccdClient-iconBox-widgetWrap:hover .ccdClient-iconBox-icon{ color: #54301A; background-color: #FFF; }
+.ccdClient-iconBox-widget.ccdClient-iconBox-blockStyle .ccdClient-iconBox-contentContainer{ box-shadow: 0 0 12px rgba(0,0,0,.12); }
+
+/* Title Banners */
+.ccdClient-headingTitle.show-divider .ccdClient-headingTitle-h1::after, .entry .styled-block .widget-title::after, .entry .styled-title .widget-title::after, .entry .styled-content .widget-title::after, .entry .styled-heading .widget-title::after{ background-color: #54301A; }
+.ccdClient-headingTitle.show-divider .ccdClient-headingTitle-h1, .entry .styled-block .widget-title, .entry .styled-title .widget-title, .entry .styled-content .widget-title, .entry .styled-heading .widget-title{ font-weight: 200; }
+
+/* Archive Widget */
+
+/* Featured Content */
+.ccdClient-featuredContent .featuredContent-wrap{ /* padding: 12px; box-shadow: 0 0 12px rgba(0,0,0,.12); */ }
+.ccdClient-featuredContent .featuredContent-contentContainer{ padding: 32px 42px 36px; }
+
+/* Blog Preview Grid */
+.ccd-recentposts-layout-1c3r a{ background-color: rgba(0,0,0,.4); }
+.ccd-recentposts-layout-1c3r .post-content{ text-shadow: 0 1px 3px rgba(0,0,0,.3); }
+.ccd-recentposts-layout-1c3r .read-more-link{ background-color: #54301A; font-family: 'Libre Franklin', Arial, Helvetica, sans-serif; }
+
+/* Recent Posts */
+.ccd-posts-list .ccd-post-display .recent-posts-title{ font-weight: 400; }
+
+/* Support Link Shortcode */
+.supportLink-widget{ background-color: #E2E2E2; color: #202020; padding: 36px 24px; }
+.supportLink-widget .supportLink-widgetIcon{ width: 64px; margin-right: 21px; float: left; font-size: 52px; text-align: center; }
+.supportLink-widget .supportLink-widgetData{ width: calc( 100% - 85px ); float: left; }
+.supportLink-widget .supportLink-dataHeading h3{ font-size: 21px; font-weight: 700; text-transform: uppercase; }
+.supportLink-widget .supportLink-dataContent p{ padding: 12px 0 0; margin: 0; line-height: 1; }
+.supportLink-widget .supportLink-dataContent a{ display: inline-block; padding: 12px 15px; text-decoration: none; color: #FFF; background-color: #54301A; transition: background .2s ease-in-out; }
+.supportLink-widget .supportLink-dataContent a:hover{ background-color: #222; }

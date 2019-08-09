@@ -1,0 +1,15 @@
+/* Quote */
+.quote-widget-wrap .quote-rgb-wrap{ min-height: 300px; display: table; width: 100%; }
+.quote-widget-wrap .quote-wrap{ display: table-cell; vertical-align: middle; width: 100%; padding: 36px; }
+.quote-widget-wrap.no-background-image.has-rgba-value.no-background-image .quote-wrap{ padding: 48px; } /* Adds padding with RGBA only */
+.quote-widget-wrap .quote-wrap p{ color: inherit; }
+.quote-widget-wrap .quote-wrap .quote-mark{ opacity: 0.5; font-size: 28px; padding: 6px 0; }
+.quote-widget-wrap .quote-wrap .quote-mark.quote-close{ text-align: right; }
+.quote-widget-wrap .quote-container{ padding: 5px 9px; }
+.quote-widget-wrap .quote-container p{ font-size: 28px; font-weight: 200; text-align: center; font-style: italic; line-height: 36px; }
+.quote-widget-wrap .quote-person p{ text-align: right; padding: 16px 0 0; }
+/* Background */
+.quote-widget-wrap.has-background-image{ background-position: center; background-size: cover; } /* BG Position */
+.quote-widget-wrap.has-background-image.no-rgba-value .quote-overlay{ padding: 28px; background-color: rgba(0,0,0,.4); } /* If there's an image but no RGBA */
+.quote-widget-wrap.no-background-image.has-rgba-value .quote-overlay{ background-color: transparent; padding: 0; } /* If there's an RGBA but no image */
+.quote-widget-wrap.has-background-image.has-rgba-value .quote-overlay{ border-width: 28px; border-color: rgba(0,0,0,.4); border-style: solid; } /* If there's an image and an RGBA */

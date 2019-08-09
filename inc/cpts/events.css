@@ -1,0 +1,11 @@
+.lvk-events-list{ list-style: none; margin: 0; padding: 0; }
+.lvk-events-list li{ background-color: #FFF; margin: 0; padding: 0; }
+#latest-items #latest-events .lvk-events-list li{ background-color: #FFF; }
+.lvk-events-list li .event-meta{ display: block; text-decoration: none; color: #000; padding: 2px 4px; margin: 0 0 5px; }
+.lvk-events-list .event-meta .event-date{ float: left; width: 55px; min-height: 70px; margin: 0 7px 0 0; color: #FFF; background-color: #936FB1; padding: 4px 0; }
+.lvk-events-list .event-meta .event-date span{ display: block; text-align: right; padding-right: 5px; }
+.lvk-events-list .event-meta .event-date span.date{ line-height: 30px; font-size: 24px; }
+.lvk-events-list .event-meta .event-date span.month{ line-height: 20px; font-size: 13px; font-style: italic;  }
+.lvk-events-list .event-meta .event-info .event-details{ font-size: 12px; }
+.lvk-events-list .event-meta .event-data{ line-height: 20px; color: #424242; }
+.lvk-events-list .event-meta .event-info h3{ font-size: 16px; line-height: 21px; margin: 0 0 5px; }
