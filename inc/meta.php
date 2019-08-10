@@ -1,17 +1,7 @@
 <div class="post-meta clearfix">
   <div class="post-meta-date">
     <p><span class="fa fa-calendar"></span>
-      Posted on <a href="<?php the_permalink(); ?>"><?php echo get_the_date('F j, Y', '', ''); ?></a> by <?php
-        if ( cmb2_get_option( 'ccdtheme_settings_blogposts', '_ccdclient_themesettings_pageposts_blogposts_guestposts_enable' ) == 1 ){
-          if ( get_post_meta( get_the_ID(), '_ccdclient_guestblog_details_displayname', true ) ){
-            echo get_post_meta( get_the_ID(), '_ccdclient_guestblog_details_displayname', true ) . ' (Guest Blogger)';
-          } else {
-            the_author_posts_link();
-          }
-        } else {
-          the_author_posts_link();
-        }
-      ?></p>
+      Posted on <a href="<?php the_permalink(); ?>"><?php echo get_the_date('F j, Y', '', ''); ?></a> by <?php the_author_posts_link(); ?></p>
   </div>
   <div class="post-meta-comments">
     <p>
@@ -36,11 +26,4 @@
       <?php } ?>
     </p>
   </div>
-    <?php /* $cat = get_the_category();
-        if ( $cat ){ if ( $cat[0]->term_id != 1 ) { ?>
-    <li><span class="post-meta-item post-meta-cats">
-        <span class="post-meta-element-title">Posted in</span>
-        <a href="<?php echo get_category_link( $cat[0]->term_id ); ?>" title="<?php echo sprintf( __( 'View all posts in %s' ), $cat[0]->name ) ?>"><?php echo $cat[0]->name; ?></a>
-      </span></li>
-    <?php } } */ ?>
 </div>

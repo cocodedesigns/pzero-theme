@@ -1,6 +1,5 @@
 <?php
-// Blog Multi-page navigation
-function post_page_nav() {
+function zeroTheme_blogPagination() {
 
 	if( is_singular() )
 		return;
@@ -33,7 +32,7 @@ function post_page_nav() {
 
 	/**	Previous Post Link */
 	if ( get_previous_posts_link() )
-		printf( '<li class="next-prev-link">%s</li>' . "\n", get_previous_posts_link('<span class="fa fa-angle-left"></span>') );
+		printf( '<li class="previousPosts nextprevLink">%s</li>' . "\n", get_previous_posts_link('<span class="fas fa-angle-left"></span>') );
 
 	/**	Link to first page, plus ellipses if necessary */
 	if ( ! in_array( 1, $links ) ) {
@@ -63,23 +62,8 @@ function post_page_nav() {
 
 	/**	Next Post Link */
 	if ( get_next_posts_link() )
-		printf( '<li class="next-prev-link">%s</li>' . "\n", get_next_posts_link('<span class="fa fa-angle-right"></span>') );
+		printf( '<li class="nextPosts nextprevLink">%s</li>' . "\n", get_next_posts_link('<span class="fas fa-angle-right"></span>') );
 
 	echo '</ul></div>' . "\n";
 
-}
-
-// Page Navigation (Next / Prev)
-function page_pagination( $echo = 1 ){
-    global $page, $numpages, $multipage, $more;
-    if( $multipage ) { //probably you should add && $more to this condition.
-        $next_text = "Next Page"; $prev_text = "Previous Page";
-        if( $page < $numpages ) { $next = _wp_link_page( $i = $page + 1 ); $next_link = '<span class="next-page page-link">' . $next . $next_text . '</a></span>'; }
-        else { $next_link = '<span class="next-page page link">' . $next_text . '</span>'; }
-        if( $i = ( $page - 1 ) ) { $prev = _wp_link_page( $i ); $prev_link = '<span class="prev-page page-link">' . $prev . $prev_text . '</a></span>'; }
-        else { $prev_link = '<span class="prev-page page link">' . $prev_text . '</span>'; }
-        $output = "<div class=\"prev-next-page\">" . $prev_link  . "<span class=\"page-counter\">{$page} of {$numpages}</span>" . $next_link . "</div>";
-    }
-    if( $echo ){ echo $output; }
-    return $output;
 }
