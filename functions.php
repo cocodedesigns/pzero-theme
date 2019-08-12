@@ -122,7 +122,14 @@ function zeroTheme_defaultAvatar($avatar_defaults) {
 }
 
 if (function_exists('add_theme_support')) {
-	add_theme_support('post-thumbnails');
+	add_theme_support( 'post-thumbnails' );
+    add_theme_support( 'custom-logo', array(
+      'height'      => 100,
+      'width'       => 300,
+      'flex-height' => true,
+      'flex-width'  => true,
+      'header-text' => array( 'site-title', 'site-description' ),
+    ) );
 }
 
 // Add menu support

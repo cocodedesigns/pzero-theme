@@ -1,7 +1,7 @@
     </main>
     <footer id="zeroTheme-footer">
       <section id="zeroTheme-footerMain">
-        <div class="container">
+        <div class="container clearfix">
           <div class="footerCol" id="footerCol-one">
             <?php if ( is_active_sidebar( 'footer-sidebar-one' ) && !dynamic_sidebar( 'footer-sidebar-one' ) ) : ?>
               <!-- Footer Sidebar One is missing content -->

@@ -28,7 +28,7 @@ function zeroTheme_blogPagination() {
 		$links[] = $paged + 1;
 	}
 
-	echo '<div class="navigation archive-navigation"><ul>' . "\n";
+	echo '<div class="navigation archiveNavigation clearfix"><ul class="archiveNav">' . "\n";
 
 	/**	Previous Post Link */
 	if ( get_previous_posts_link() )

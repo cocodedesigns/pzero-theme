@@ -2,3 +2,9 @@
 
 /* Layout */
 .container{ padding: 0 10px; }
+
+/* Header */
+
+/* Footer */
+footer #zeroTheme-footerMain .container{ display: block; }
+footer .footerCol{ width: 100%; flex: none; }

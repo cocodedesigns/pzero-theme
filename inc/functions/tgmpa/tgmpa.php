@@ -60,56 +60,41 @@ function tgmpa_register_required_plugins() {
 	 */
 	$plugins = array(
 
-		// This is an example of how to include a plugin from the WordPress Plugin Repository.
-        
-		array(
-			'name'               => 'My Plugin', // The plugin name.
-			'slug'               => 'my-custom-plugin', // The plugin slug (typically the folder name).
-			'source'             => get_stylesheet_directory_uri() . 'inc/plugins/my-custom-plugin.zip', // The plugin source.
-			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
-			'version'            => '1.0.0', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
-			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
-			'external_url'       => '', // If set, overrides default API URL and points to an external URL.
-			'is_callable'        => 'my_plugin_callback', // If set, this callable will be be checked for availability to determine if a plugin is active.
-		),
-
-		// This is an example of how to include a plugin from an arbitrary external source in your theme.
-		array(
-			'name'         => 'TGM New Media Plugin', // The plugin name.
-			'slug'         => 'tgm-new-media-plugin', // The plugin slug (typically the folder name).
-			'source'       => 'https://s3.amazonaws.com/tgm/tgm-new-media-plugin.zip', // The plugin source.
-			'required'     => true, // If false, the plugin is only 'recommended' instead of required.
-			'external_url' => 'https://github.com/thomasgriffin/New-Media-Image-Uploader', // If set, overrides default API URL and points to an external URL.
-		),
-
-		// This is an example of how to include a plugin from a GitHub repository in your theme.
-		// This presumes that the plugin code is based in the root of the GitHub repository
-		// and not in a subdirectory ('/src') of the repository.
-		array(
-			'name'      => 'Adminbar Link Comments to Pending',
-			'slug'      => 'adminbar-link-comments-to-pending',
-			'source'    => 'https://github.com/jrfnl/WP-adminbar-comments-to-pending/archive/master.zip',
-		),
-
-		// This is an example of how to include a plugin from the WordPress Plugin Repository.
         array(
             'name'      => 'Jetpack',
             'slug'      => 'jetpack',
             'required'  => true,
         ),
         array(
-            'name'      => 'Caldera Forms',
-            'slug'      => 'caldera-forms',
+            'name'      => 'Yoast SEO',
+            'slug'      => 'wordpress-seo',
             'required'  => false,
         ),
-
-		// This is an example of the use of 'is_callable' functionality. A user could - for instance -
-		// have WPSEO installed *or* WPSEO Premium. The slug would in that last case be different, i.e.
-		// 'wordpress-seo-premium'.
-		// By setting 'is_callable' to either a function from that plugin or a class method
-		// `array( 'class', 'method' )` similar to how you hook in to actions and filters, TGMPA can still
-		// recognize the plugin as being installed.
+        array(
+            'name'      => 'Smush',
+            'slug'      => 'wp-smushit',
+            'required'  => false,
+        ),
+        array(
+            'name'      => 'Forminator',
+            'slug'      => 'forminator',
+            'required'  => false,
+        ),
+        array(
+            'name'      => 'Hummingbird',
+            'slug'      => 'hummingbird-performance',
+            'required'  => false,
+        ),
+        array(
+            'name'      => 'Hustle',
+            'slug'      => 'wordpress-popup',
+            'required'  => false,
+        ),
+        array(
+            'name'      => 'Defender',
+            'slug'      => 'defender-security',
+            'required'  => false,
+        ),
 
 	);
 

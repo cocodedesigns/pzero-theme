@@ -17,7 +17,18 @@
     <header id="siteHeader">
       <div class="container">
         <div id="headerLogo">
-          <a href="<?php echo get_option('home'); ?>/" title="<?php bloginfo('name'); ?>"><img src="https://via.placeholder.com/300x80/DFDFDF/505050/?text=Project+Zero" /></a>
+          <a href="<?php echo get_option('home'); ?>/" title="<?php bloginfo('name'); ?>">
+          <?php 
+            $logo_id = get_theme_mod( 'custom_logo' );
+            $logo = wp_get_attachment_image_src( $logo_id , 'full' );
+              
+            if ( $logo ){
+          ?>
+            <img src="<?php echo $logo[0]; ?>" alt="<?php bloginfo('name'); ?>" width="<?php echo $logo[1]; ?>" height="<?php echo $logo[2]; ?>" />
+          <?php } else { ?>
+            <img src="https://via.placeholder.com/300x80/DFDFDF/505050/?text=Project+Zero" />
+          <?php } ?>
+          </a>
         </div>
         <nav id="siteMenu">
           <div class="menuContainer">

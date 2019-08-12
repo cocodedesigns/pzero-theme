@@ -2,3 +2,11 @@
 
 /* Layout */
 .container{ padding: 0 20px; }
+
+/* Header */
+
+/* Footer */
+footer #zeroTheme-footerMain .container{ flex-flow: row wrap; }
+footer .footerCol{ width: calc( 50% - 10px ); }
+footer .footerCol:nth-of-type(odd){ margin-right: 10px; }
+footer .footerCol:nth-of-type(even){ margin-left: 10px; }
