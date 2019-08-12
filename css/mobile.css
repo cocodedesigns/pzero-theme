@@ -8,3 +8,6 @@
 /* Footer */
 footer #zeroTheme-footerMain .container{ display: block; }
 footer .footerCol{ width: 100%; flex: none; }
+
+/* Page Wrap */
+.mainContent{ padding: 25px 0; }

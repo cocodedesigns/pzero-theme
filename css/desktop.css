@@ -33,3 +33,6 @@ header nav .sub-menu li > .sub-menu{ position: absolute; left: 245px; top: 0; }
 /* Footer */
 footer .footerCol{ width: 25%; }
 footer #zeroTheme-footerMain .container > * + * { margin-left: 10px; }
+
+/* Page Wrap */
+.mainContent{ padding: 50px 0; }

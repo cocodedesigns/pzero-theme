@@ -4,6 +4,9 @@ body{ margin: 0; padding: 0; background-color: #FFF; }
 ::-moz-selection { text-shadow: none; background-color: #EBDD99; color: #80276E; }
 ::selection { text-shadow: none; background-color: #EBDD99; color: #80276E; text-decoration: none; }
 
+a{ color: #910611; font-weight: 500; text-decoration: none; }
+a:hover{ color: #d10a1a; text-decoration: underline; }
+
 p, li, table, tbody, tr, th, td, body{ font-family: 'Lato', Arial, Helvetica, sans-serif; font-weight: 300; font-size: 16px; line-height: 1.8; }
 h1, h2, h3, h4, h5, h6{ font-family: 'Lato', Arial, Helvetica sans-serif; line-height: 1.4; }
 h1, h2, h3, h4, h5, h6, p{ margin: 0; padding: 0 0 10px 0; }
@@ -63,31 +66,42 @@ header nav .menunav .menu > .menu-item-has-children > a:after{ content: "\f078";
 footer{ border-top: solid 1px #DFDFDF; padding: 24px 0; }
 footer #zeroTheme-footerMain .container{ display: flex; }
 footer .footerCol{ padding: 0 5px; margin-bottom: 24px; }
-footer .footerCol .widget .widget-title{ font-size: 21px; font-weight: 800; }
 
 /* Page Title */
 .pageTitle{ padding: 36px 0; }
+
+/* Post Meta */
+.postMeta p, .postMeta a{ font-size: 14px; }
+.postMeta p{ color: #808080; }
+.postMeta p .postMeta-icon{ display: inline-block; width: 20px; text-align: center; margin-right: 6px; }
 
 /* Blog */
 /* Archive */
 #blogArchive .post{ margin-bottom: 36px; }
 #blogArchive .post.has-post-thumbnail .featuredImage{ padding-bottom: 55.89%; margin: 0 0 24px; background-size: cover; background-repeat: no-repeat; background-position: center; position: relative; }
 /* Archive Navigation */
-#blogArchive .navigation .archiveNav{ text-align: center; list-style: none; margin: 0; padding: 0; }
-#blogArchive .navigation .archiveNav li{ display: inline-block; }
-#blogArchive .navigation .archiveNav li a{ border: solid 1px #222; display: block; width: 28px; line-height: 28px; color: #222; text-decoration: none; }
-#blogArchive .navigation .archiveNav li a:hover{ color: #FFF; background-color: #222; }
-#blogArchive .navigation .archiveNav .nextprevLink a{ color: #FFF; background-color: #222; }
-#blogArchive .navigation .archiveNav .nextprevLink a:hover{ color: #FFF; background-color: #CCC; }
-#blogArchive .navigation .archiveNav .nextPosts{ float: right; }
-#blogArchive .navigation .archiveNav .previousPosts{ float: left; }
+.navigation .archiveNav{ text-align: center; list-style: none; margin: 0; padding: 0; }
+.navigation .archiveNav li{ display: inline-block; }
+.navigation .archiveNav li a{ border: solid 1px #222; display: block; width: 28px; line-height: 28px; color: #222; text-decoration: none; }
+.navigation .archiveNav li a:hover{ color: #FFF; background-color: #222; }
+.navigation .archiveNav .nextprevLink a{ color: #FFF; background-color: #222; }
+.navigation .archiveNav .nextprevLink a:hover{ color: #FFF; background-color: #CCC; }
+.navigation .archiveNav .nextPosts{ float: right; }
+.navigation .archiveNav .previousPosts{ float: left; }
+
 /* Single Post */
 
 /* Single Page */
 
-/* Landing Page (Template) */
+/* Sidebar */
+#sidebar .widget .widget-title, footer .footerCol .widget .widget-title{ font-size: 21px; font-weight: 800; }
+#sidebar .widget{ margin-bottom: 24px; }
 
 /* Search Results Page */
+#searchArchive article{ margin-bottom: 18px; }
+#searchArchive article .postTitle h2{ font-size: 21px; margin: 0; padding: 0 0 6px 0; }
+#searchArchive article .postPermalink a{ color: #17911f; font-size: 14px; }
+#searchArchive article .postExcerpt{ padding: 12px 0; }
 
 /* 404 Error Page */
 
