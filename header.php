@@ -26,7 +26,7 @@
           ?>
             <img src="<?php echo $logo[0]; ?>" alt="<?php bloginfo('name'); ?>" width="<?php echo $logo[1]; ?>" height="<?php echo $logo[2]; ?>" />
           <?php } else { ?>
-            <img src="https://via.placeholder.com/300x80/DFDFDF/505050/?text=Project+Zero" />
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/project-zero-logo.png" width="300" height="100" />
           <?php } ?>
           </a>
         </div>
@@ -35,6 +35,17 @@
             <?php wp_nav_menu( array('theme_location' => 'header_menu', 'container_class' => 'menuWrap' ) ); ?>
           </div>
         </nav>
+        <div id="menutoggle">
+          <a href="#openmenu"><span class="fas fa-bars"></span></a>
+        </div>
       </div>
     </header>
+    <script>
+      $(document).ready(function(){
+          $('#menutoggle a, #toggle_touchClose').click(function(e){
+              e.preventDefault();
+              $('header nav').toggleClass('show');
+          });
+      });
+    </script>
     <main id="mainBody">

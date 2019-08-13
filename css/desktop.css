@@ -10,11 +10,14 @@
 /* Logo */
 header #headerLogo{ float: left; }
 /* Drop Down Menu */
-header nav{ margin: 0; padding: 0 0 0 12px; width: calc( 100% - 300px ); text-align: right; float: right; }
+header nav{ float: right; padding-top: 10px; padding-bottom: 10px; display: flex; height: 100px; align-items: center; }
+header nav .menuContainer{ width: 100%; }
+header nav *{ transition: all .2s ease-in-out; }
 header nav a{ line-height: 36px; }
 header nav .menu-wrap{ padding: 32px 0; }
-header nav .menu{ list-style: none; margin: 0; padding: 0; }
+header nav .menu{ list-style: none; padding: 0; text-align: right; }
 header nav .menu li{ display: inline-block; margin: 0 -2px; position: relative; }
+
 header nav li.menu-item-has-children a::after{ font-family: 'FontAwesome'; font-size: 10px; vertical-align: top; display: inline-block; }
 header nav .menu > li.menu-item-has-children > a::after{ line-height: 36px; padding: 0 0 0 8px; }
 header nav .sub-menu > li.menu-item-has-children > a::after{ line-height: 1.4; padding: 3px 5px 0 0; float: right; }
@@ -29,10 +32,13 @@ header nav .sub-menu > li > a{ line-height: 1.4; padding: 12px; display: block; 
 header nav .sub-menu > li:last-of-type a{ border-bottom: none; }
 header nav .sub-menu > li > a:hover{ background-color: #892200; color: #FFF; }
 header nav .sub-menu li > .sub-menu{ position: absolute; left: 245px; top: 0; }
+/* Mobile Menu Override */
+header #menutoggle{ display: none; }
+header nav .touchClose{ display: none; }
 
 /* Footer */
 footer .footerCol{ width: 25%; }
 footer #zeroTheme-footerMain .container > * + * { margin-left: 10px; }
 
 /* Page Wrap */
-.mainContent{ padding: 50px 0; }
+.mainContent{ padding: 0 0 50px 0; }

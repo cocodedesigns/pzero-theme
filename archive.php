@@ -24,8 +24,12 @@
     <section class="mainContent" id="blogArchive">
       <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class() ?>>
-          <div class="featuredImage postImage">
-          </div>
+        <?php 
+          if ( has_post_thumbnail() ) {
+            $featured = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'large' );
+          ?>
+            <div class="featuredImage postImage" style="background-image: url('<?php echo $featured[0]; ?>'); --featWidth: <?php echo $featured[1]; ?>; --featHeight: <?php echo $featured[2]; ?>;">></div>
+          <?php } ?>
           <div class="postContent">
             <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
             <?php include (TEMPLATEPATH . '/inc/meta.php' ); ?>

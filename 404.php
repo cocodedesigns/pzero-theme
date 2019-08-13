@@ -2,7 +2,7 @@
   <div id="container" class="pageContainer errorPage container">
     <section class="mainContent" id="errorPage" <?php post_class() ?>>
       <div class="postContent">
-        <div class="errorpage-icon">
+        <div class="errorPage-icon">
           <span class="fas fa-exclamation-triangle"></span>
         </div>
         <h1 class="page-title">Error 404 - Page Not found</h1>
@@ -13,7 +13,7 @@
         <div id="errorSearch">
           <?php echo get_search_form(); ?>
         </div>
-        <p class="errorpage-errorcode">HTTP_ERROR_404</p>
+        <p class="errorPage-errorCode">HTTP_ERROR_404</p>
       </div>
     </section>
     <?php // get_sidebar(); ?>

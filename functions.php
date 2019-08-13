@@ -15,14 +15,6 @@ wp_admin_notification(
   true // Makes your notification dismissable via a link. Change to false if your want your notification persistant
 );
 
-$mytheme_debug = var_export( $mytheme, true );
-wp_admin_notification( 
-  'wp-get-theme-dump', // Set your unique notification ID
-  $mytheme_debug, 
-  'info', // Notification type - acceptable values are 'success', 'error', 'info' or 'warning'
-  false // Makes your notification dismissable via a link. Change to false if your want your notification persistant
-);
-
 // Get Plugin Update Library
 require_once STYLESHEETPATH . '/inc/functions/ptuc/plugin-update-checker.php';
 // Update Theme
@@ -47,6 +39,7 @@ include_once STYLESHEETPATH . '/inc/functions/sidebars.php';
 
 // Load scripts and stylesheets into the theme
 function zeroTheme_loadScriptsStyles(){
+  wp_enqueue_script('jquery');
   // Main Stylesheet
   wp_enqueue_style('main-css', get_stylesheet_directory_uri().'/css/main.css');
   // Fonts (from Google Fonts)
@@ -72,6 +65,15 @@ function zeroTheme_loadScriptsStyles(){
   wp_enqueue_style('mobile-css', get_stylesheet_directory_uri().'/css/mobile.css', array(), '', 'only screen and (max-width: 800px)');
 }
 add_action('wp_enqueue_scripts', 'zeroTheme_loadScriptsStyles');
+
+function zeroTheme_jqueryNoConflict(){
+  ?>
+  <script>
+    $=jQuery.noConflict();
+  </script>
+  <?php
+}
+add_action('wp_head', 'zeroTheme_jqueryNoConflict');
 
 // Clean up the <head>
 function zeroTheme_removeHeadLinks() {
