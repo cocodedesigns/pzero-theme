@@ -1,3 +1,7 @@
+[![GitHub license](https://img.shields.io/github/license/cocodedesigns/cocode-zero?style=for-the-badge)](https://raw.githubusercontent.com/cocodedesigns/cocode-zero/master/LICENSE.md)
+![GitHub release](https://img.shields.io/github/release/cocodedesigns/cocode-zero?style=for-the-badge)
+![GitHub commits since latest release (branch)](https://img.shields.io/github/commits-since/cocodedesigns/cocode-zero/latest/master?style=for-the-badge)
+
 # Thank you ...
 
 Thank you for downloading Cocode Zero to create your own custom [WordPress](https://wordpress.org/) theme.  We are grateful to be able to provide you with this starter theme so you can quickly learn the basic fucntions of creating a custom theme for WordPress, or as a springboard for your future project.
