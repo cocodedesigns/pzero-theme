@@ -8,7 +8,7 @@ require_once STYLESHEETPATH . '/inc/functions/wpan/bootstrap.php';
 wp_admin_notification( 
   'notification-id', // Set your unique notification ID
   __(
-    '<strong>Thanks for using Cocode Zero as your base theme.</strong><br /> You can use this to create your own custom theme, whether it is a free theme, or you wish to use it commercially.  We have included a number of plugins for you, including <strong>WP Admin Notification</strong> from Askupa Software, <strong>TGM Plugin Activation</strong>, and <strong>Plugin Update Checker</strong> from YahnisElsts.',
+    '<strong>Thanks for using <em>Project Zero from Cocode Designs</em> as your base theme.</strong><br /> You can use this to create your own custom theme, whether it is a free theme, or you wish to use it commercially.  We have included a number of plugins for you, including <strong>WP Admin Notification</strong> from Askupa Software, <strong>TGM Plugin Activation</strong>, and <strong>Plugin Update Checker</strong> from YahnisElsts.',
     'zero-theme'
   ), 
   'info', // Notification type - acceptable values are 'success', 'error', 'info' or 'warning'
