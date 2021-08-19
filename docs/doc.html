@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ProjectZero - Give your WordPress theme a headstart</title>
+    <script src="https://kit.fontawesome.com/218c3c5c34.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="icomoon/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/prism.css" />
+    <link rel="author" href="humans.txt">
+  </head>
+  <body class="docs__body">
+    <nav id="page__nav" class="navbar">
+      <div id="nav__logo" class="logo"><a href="./"></a></div>
+      <ul id="nav__menu" class="menu">
+        <div class="menu__item toggle"><span></span></div>
+        <li class="menu__item"><a href="./" class="link link--dark"><i class="icon icon-home"></i> Home</a></li>
+        <li class="menu__item"><a href="https://github.com/cocodedesigns/project-zero" class="link link--dark"><i class="icon icon-github"></i> Github</a></li>
+      </ul>
+    </nav>
+    <main id="doc__main" class="wrapper container">
+      <aside class="doc__nav">
+        <ul>
+          <li class="js-btn selected">What is ProjectZero?</li>
+          <li class="js-btn">Installation</li>
+          <li class="js-btn">WP Theme Structure</li>
+          <li class="js-btn">Custom Front Page</li>
+          <li class="js-btn">Included Packages</li>
+          <li class="js-btn">Push to GitHub</li>
+          <li class="js-btn">Configuration</li>
+        </ul>
+      </aside>
+      <article class="doc__content">
+        <section class="js-section">
+          <h3 class="section__title">What is ProjectZero?</h3>
+          <p>ProjectZero is a free, open source theme for WordPress.  It has been designed for WordPress developers to make site creation easier.  It offers a basic framework and rudimentary set of files to allow a theme to be deployed almost instantly, as well as encouraging theme development from new developers.</p>
+          <p>It can also be used by the experienced developers to make site creating easier (that’s what we use it for anyway), and is a useful tool to deploy new themes with minimal effort.</p>
+        </section>
+        <section class="js-section">
+          <h3 class="section__title">Installation</h3>
+          <p>There are two ways you can download and install the theme: Download the theme directly or fork the repo on GitHub.</p>
+          <h4 class="section__subtitle">Download the theme directly</h4>
+          <p>To download the latest version of ProjectZero, view our <a href="https://github.com/cocodedesigns/project-zero/releases/latest/" target="_blank" rel="nofollow">Releases page on GitHub <span class="icon icon-popup"></span></a>.</p>
+          <h4 class="section__subtitle">Fork the repo on GitHub</h4>
+          <p>To fork the <code class="language-txt">project-zero</code> repo, log into your GitHub account and visit <a href="https://gitub.com/cocodedesigns/project-zero/">the project repo <span class="icon icon-popup"></span></a>.</p>
+          <figure class="docs__image">[image - screenshot]</figure>
+          <p>Click "Fork" at the top of the page.</p>
+          <figure class="docs__image">[image - screenshot]</figure>
+          <p>From here, change the repo information to reflect your project.</p>
+          <figure class="docs__image">[image - screenshot]</figure>
+        </section>
+        <section class="js-section">
+          <h3 class="section__title">WP Theme Structure</h3>
+          <article class="alertBox alert infoMsg">
+            <div class="alertWrap wrap clearfix">
+              <figure class="alertIcon">
+                <span class="icon"></span>
+              </figure>
+              <div class="alertContent">
+                <h6 class="alertTitle">For your reference</h6>
+                <p>The files included in the theme adhere to the <a href="https://developer.wordpress.org/themes/basics/template-hierarchy/" target="_blank" rel="nofollow">Template Hierarchy <span class="icon icon-popup"></span></a>.</p>
+              </div>
+            </div>
+          </article>
+          <figure class="docs__image">[image - graphic from wp.org]</figure>
+          <p>The files included in this blank theme are:</p>
+          <ul>
+            <li>404.php</li>
+            <li>archive.php</li>
+            <li>comments.php</li>
+            <li>footer.php</li>
+            <li>functions.php</li>
+            <li>header.php</li>
+            <li>index.php</li>
+            <li>page.php</li>
+            <li>screenshot.php</li>
+            <li>search.php</li>
+            <li>searchform.php</li>
+            <li>sidebar.php</li>
+            <li>single.php</li>
+            <li>style.css</li>
+          </ul>
+          <p>To make editing styles easier, we have used <code class="language-txt">css/main.css</code> as our main stylesheet, rather than <code class="language-txt">style.css</code>.  For responsive websites, we have moved desktop, tablet and mobile specific styles to <code class="language-txt">css/desktop.css</code>, <code class="language-txt">css/tablet.css</code> and <code class="language-txt">css/mobile.css</code> respectively.  There is also a <code class="language-txt">css/admin.css</code> stylesheet for admin specific styles.</p>
+          <p>The code for the author information box can be found in <code class="language-txt">inc/author-box.php</code> and the post meta information can be found in <code class="language-txt">inc/meta.php</code>.  <code class="language-txt">inc/functions/page-nav.php</code> contains the <code class="language-php">blogPagination();</code> function, which can be found in post archives.  <code class="language-txt">inc/functions/sidebars.php</code> calls the blog and footer sidebars, and both files are called by <code class="language-txt">functions.php</code>.</p>
+        </section>
+        <section class="js-section">
+          <h3 class="section__title">Custom Front Page</h3>
+          <p>By default, WordPress makes your blog archive page the home page for the blog.  You can change the settings to set a static page as your home page.  WordPress also comes with the functionality of setting a specific template for your front page.  You can save a file called <code class="language-txt">front-page.php</code> in your theme's root folder, and WordPress will set this as your front page's template.</p>
+        </section>
+        <section class="js-section">
+          <h3 class="section__title">Includes</h3>
+          <p>To help make production easier, we have included these scripts.  They help with releasing your theme and helping to set up staging or production sites.</p>
+          <h4 class="section__subtitle">TGMPA</h4>
+          <p>TGM Plugin Activation was created by TGMPA and is used to request important plugins from the WordPress Plugin Directory, from your own server, or bundled with the theme itself.  Details and documenttion can be found at <a href="http://tgmpluginactivation.com/" target="_blank" rel="nofollow">http://tgmpluginactivation.com/ <span class="icon icon-popup"></span></a>.</p>
+          <h4 class="section__subtitle">Plugin Update Checker</h4>
+          <p>Plugin Update Checker was created by [] and is used to check for updates to themes.  You can use GitHub as your release server, or you can create your own update server using a simple piece of JSON code.  Details and documentation can be found at <a href="https://github.com/YahnisElsts/plugin-update-checker" target="_blank" rel="nofollow">https://github.com/YahnisElsts/plugin-update-checker <span class="icon icon-popup"></span></a>.</p>
+          <h4 class="section__subtitle">WordPress Admin Notification</h4>
+          <p>WordPress Admin Notification was created by Askupa Software and is used to display custom notifications within the admin area.  You can use this to notify users to check your documentation, or to thank them for installing your theme.  Details about the project and documentation can be found at <a href="https://github.com/amarkal/amarkal-admin-notification" target="_blank" rel="nofollow">https://github.com/amarkal/amarkal-admin-notification <span class="icon icon-popup"></span></a>.</p>
+          <h4 class="section__subtitle">FontAwesome</h4>
+          <p>FontAwesome is a popular icon webfont, currently owned by Fonticons, Inc.  We have included the ability for the icons to be inclded in <code class="language-txt">functions.php</code>. While we have called it using FontAwesome's CDN, you can save your own local copy if it works for you.</p>
+          <p>To enable FontAwesome, you will need to uncomment the line</p>
+          <pre><code class="language-php">// wp_enqueue_script('fontawesome-js', 'https://kit.fontawesome.com/MY-KIT-ID.js', array(), '0.0.0');</code></pre>
+          <p>To use FontAwesome in your theme from a remote CDN, you will need to have an account with FontAwesome.  To register for FREE, visit <a href="https://fontawesome.com/start" target="_blank" rel="nofollow">https://fontawesome.com/start <span class="icon icon-popup"></span></a> and get your free FontAwesome kit.  Once you have the right code, uncomment the <code class="language-php">wp_enqueue_script</code> function, replace the script URL with your own, and save the file.</p>
+          <p>You should use only one copy of FontAwesome to avoid conflicts, so if you use a local copy, you will need to remove the request for the copy from your theme.  If you are using a specific version of FontAwesome, it is recommended to change the <code class="language-txt">0.0.0</code> variable at the end of the function to your version number (eg. <code class="language-txt">5.10.1</code>).  This will make further development easier.  Otherwise, you can delete the number altogether.</p>
+        </section>
+        <section class="js-section">
+          <h3 class="section__title">Push to GitHub</h3>
+          <p>With the Plugin Update Checker, you can use GitHub as your release server.  In <code class="language-txt">functions.php</code>, you will see the following code:</p>
+<pre><code class="language-php">require_once STYLESHEETPATH . '/inc/functions/puc/plugin-update-checker.php';
+$checkTheme = Puc_v4_Factory::buildUpdateChecker(
+  $mytheme->get('ThemeURI'), // This can be any public repo on GitHub, or any file on your own server, defaults to the Theme URI value in style.css
+  __FILE__,
+  $mytheme->get('TextDomain'), // Uses the 'Text Domain' string as defined in style.css
+);
+// Enables releases via GitHub
+$checkTheme->getVcsApi()->enableReleaseAssets();</code></pre>
+            <p>To make it easier to call your repository, we have used the 'Theme URI' header in your <code class="language-txt">style.css</code> file to save your GitHub repo (in the format of <code class="language-txt">https://github.com/{USER-NAME}/{REPO-NAME}/</code>).  We have also used the 'Text Domain' header to save your theme's unique slug.  This argument in the PHP array is optional, but it is recommended. In most cases, the slug should be the same as the name of your theme directory.  By default, it uses the theme directory name as the slug. The PUC GitHub page says that, "if you intend on [using or enforcing] the slug in your own code - e.g. to filter updates or override update checker behaviour - it can be a good idea to set it explicitly."</p>
+            <p>The script comes with the ability to select a different branch for your stable release branch.  By default it will select the main/master branch, but you can override this by adding this line after the function:</p>
+            <pre><code class="language-php">$checkTheme->setBranch('stable-branch-name');</code></pre>
+            <p>It also allows you to push out updates from private repositories.  To do this, GitHub requires a personal access token, which you can generate in your account settings.  Go to <strong>Settings &gt; Developer Settings &gt; Personal access tokens</strong> to generate a token.  Once it has been generated, add this line after the function:</p>
+            <pre><code class="language-php">$checkTheme->setAuthentication('your-token-here');</code></pre>
+            <p>If you do not want to use GitHub, you can use your own server to push out updates.  Instead of the code already in your functions.php file, you will need to use this code:</p>
+<pre><code class="language-php">require 'path/to/plugin-update-checker/plugin-update-checker.php';
+$checkTheme = Puc_v4_Factory::buildUpdateChecker(
+  'http://example.com/path/to/details.json', // The JSON file should contain the code below.
+  __FILE__, //Full path to the main plugin file or functions.php.
+  $mytheme->get('TextDomain'), // Uses the 'Text Domain' string as defined in style.css
+);</code></pre>
+            <p>On your server, at the URL you stated above, you should save a JSON file with the following information:</p>
+<pre><code class="language-json">{
+  "version": "2.0",
+  "details_url": "http://example.com/version-2.0-details.html",
+  "download_url": "http://example.com/example-theme-2.0.zip"
+}</code></pre>
+            <p>The information should refer to files on your server.</p>
+            <article class="alertBox alert alertMsg">
+              <div class="alertWrap wrap clearfix">
+                <figure class="alertIcon">
+                  <span class="icon"></span>
+                </figure>
+                <div class="alertContent">
+                  <h6 class="alertTItle">Just to note ...</h6>
+                  <p>If you develop a theme for the WordPress Theme Directory, using any other release server will be against their terms of service.  You will only be able to use Plugin Update Checker to release your own themes, or to push out themes for development purposes.</p>
+                </div>
+              </div>
+            </article>
+        </section>
+        <section class="js-section">
+          <h3 class="section__title">Configuration</h3>
+          <p>Learn how to configure settings for Scribbler, such as your syntax highlighting preference and the default saving folder location.</p>
+          <table id="customers">
+            <tr>
+              <th>Options</th>
+              <th>Value</th>
+              <th>Default</th>
+            </tr>
+            <tr>
+              <td>encryption</td>
+              <td>encrypt all notes before saving. If turned on, it requires password to open the file.</td>
+              <td>false</td>
+            </tr>
+            <tr>
+              <td>highlighting</td>
+              <td>Show syntax highlight on markdown text.</td>
+              <td>true</td>
+            </tr>
+            <tr>
+              <td>prettyTable</td>
+              <td>Render table with Scribbler’s pretty table style.</td>
+              <td>true</td>
+            </tr>
+          </table>
+          <p>Malis percipitur an pro. Pro aperiam persequeris at, at sonet sensibus mei, id mea postulant definiebas concludaturque. Id qui malis abhorreant, mazim melius quo et. At eam altera dolorum, case dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no verterem deseruisse, mea brute postea te, ne per tacimates suavitate vituperatoribus.</p>
+        </section>
+      </article>
+    </main>
+    <footer id="page__footer" class="footer">
+      <div class="container row">
+        <div class="footer__copyright col-6">
+          <p class="footer_content copyright">Copyright &copy; Nathan Hawkes 2021. All rights reserved.</p>
+          <p class="footer_content sting">Powered by <a href="https://www.github.com/pages/">GitHub Pages</a>, designed with love, created by <a href="https://www.nathanhawkes.co.uk/">Nathan Hawkes</a>.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="js/prism.js"></script>
+    <script src="scribbler.js"></script>
+  </body>
+</html>
