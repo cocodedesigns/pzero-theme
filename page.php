@@ -17,7 +17,6 @@
         </div>
       </article>
     </section>
-    <?php // get_sidebar(); ?>
   </div>
   <?php endwhile; endif; ?>
 <?php get_footer(); ?>

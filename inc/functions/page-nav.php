@@ -1,5 +1,5 @@
 <?php
-function zeroTheme_blogPagination() {
+function blogPagination() {
 
 	if( is_singular() )
 		return;

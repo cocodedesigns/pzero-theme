@@ -18,7 +18,7 @@
 				  <?php include (TEMPLATEPATH . '/inc/meta.php' ); ?>
         </article>
       <?php endwhile; ?>
-        <?php zeroTheme_blogPagination(); ?>
+        <?php blogPagination(); ?>
       <?php else : ?>
         <h2>Not Found</h2>
       <?php endif; ?>

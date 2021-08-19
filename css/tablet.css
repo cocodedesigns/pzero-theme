@@ -6,16 +6,16 @@
 /* Header */
 /* Menu */
 /* Drop Down Menu */
-header nav{ display: none; text-align: left; padding: 0; width: 100%; }
-header nav.show{ padding-top: 10px; display: block; }
-header nav .menu-container{ display: block; }
-header nav a{ display: block; line-height: 48px; padding: 0 18px; }
+#siteHeader nav{ display: none; text-align: left; padding: 0; width: 100%; }
+#siteHeader nav.show{ padding-top: 10px; display: block; }
+#siteHeader nav .menu-container{ display: block; }
+#siteHeader nav a{ display: block; line-height: 48px; padding: 0 18px; }
 
 /* Footer */
-footer #zeroTheme-footerMain .container{ flex-flow: row wrap; }
-footer .footerCol{ width: calc( 50% - 10px ); }
-footer .footerCol:nth-of-type(odd){ margin-right: 10px; }
-footer .footerCol:nth-of-type(even){ margin-left: 10px; }
+#siteFooter #footerMain .container{ flex-flow: row wrap; }
+#siteFooter .footerCol{ width: calc( 50% - 10px ); }
+#siteFooter .footerCol:nth-of-type(odd){ margin-right: 10px; }
+#siteFooter .footerCol:nth-of-type(even){ margin-left: 10px; }
 
 /* Page Wrap */
 .mainContent{ padding: 35px 0; }
