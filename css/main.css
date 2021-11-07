@@ -27,9 +27,7 @@ main{ flex: 1; }
 .pageTitle{ flex: none; /* Forces title to ignore layout and fit full width */ }
 
 /* Blockquote */
-.entry blockquote{ position: relative; margin: 40px 20px; padding: 40px 40px 40px 70px; background-color: #EEE; border: solid 15px #EEE; min-height: 120px; box-sizing: content-box; }
-.entry blockquote::before{ content: ""; display: block; position: absolute; background-color: #CF4520; width: 2px; height: 120px; left: 30px; top: 40px; }
-.entry blockquote::after{ content: "\f4ad"; font-family: "Font Awesome\ 5 Free"; color: #CF4520; font-size: 21px; display: block; position: absolute; width: 40px; height: 40px; line-height: 40px; text-align: center; left: 10px; top: 60px; background-color: #EEE; font-weight: 700; }
+.entry blockquote{ position: relative; margin: 40px 20px; padding: 40px; background-color: #EEE; border: solid 15px #EEE; box-sizing: content-box; }
 .entry blockquote p{ font-size: 20px; line-height: 1.45; }
 .entry blockquote p:last-of-type{ padding: 0; margin: 0; }
 
