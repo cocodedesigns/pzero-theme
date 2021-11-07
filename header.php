@@ -26,7 +26,7 @@
           ?>
             <img src="<?php echo $logo[0]; ?>" alt="<?php bloginfo('name'); ?>" width="<?php echo $logo[1]; ?>" height="<?php echo $logo[2]; ?>" />
           <?php } else { ?>
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/project-zero-logo.png" width="300" height="100" />
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/project-zero-logo.png" width="300" />
           <?php } ?>
           </a>
         </div>

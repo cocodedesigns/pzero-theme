@@ -1,6 +1,6 @@
     </main>
-    <footer id="zeroTheme-footer">
-      <section id="zeroTheme-footerMain">
+    <footer id="siteFooter">
+      <section id="footerMain">
         <div class="container clearfix">
           <div class="footerCol" id="footerCol-one">
             <?php if ( is_active_sidebar( 'footer-sidebar-one' ) && !dynamic_sidebar( 'footer-sidebar-one' ) ) : ?>
@@ -24,7 +24,7 @@
           </div>
         </div>
       </section>
-      <section id="zeroTheme-footerCopyright">
+      <section id="footerCopyright">
         <div class="container">
           <p>&copy;<?php echo date("Y"); echo " "; bloginfo('name'); ?></p>
           <p><?php

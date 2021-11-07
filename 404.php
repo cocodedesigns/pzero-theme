@@ -16,6 +16,5 @@
         <p class="errorPage-errorCode">HTTP_ERROR_404</p>
       </div>
     </section>
-    <?php // get_sidebar(); ?>
   </div>
 <?php get_footer(); ?>
