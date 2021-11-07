@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.2.1] - 2021-11-01
+### Changed
+* Added hooks to remove functions that could be exploited
+
+### Changed
+* Bug fixes
+
 ## [0.2] - 2021-08-16
 ### Removed
 * Removed local FontAwesome instance
