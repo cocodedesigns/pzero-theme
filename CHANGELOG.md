@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file.
 
 ## [0.2.1] - 2021-11-01
-### Changed
+### Added
 * Added hooks to remove functions that could be exploited
 
 ### Changed
