@@ -12,14 +12,13 @@ This theme comes without support, but there are plenty of resources available, s
 
 This project has been created with thanks to a number of different projects, not just the work of your designer. These projects include:
 
-* [Automattic](https://automattic.com/) and [WordPress](https://wordpress.org/)
+* [WordPress, of course](https://wordpress.org/)
 * [FontAwesome](https://www.fontawesome.com)
 * [TGM Plugin Activation](http://tgmpluginactivation.com/)
 * [WP Admin Notification](https://github.com/askupasoftware/wp-admin-notification/)
 * [Plugin and Theme Update Checker](https://github.com/YahnisElsts/plugin-update-checker/)
-* [WPMU DEV](https://premium.wpmudev.org/)
 
-This theme has been licensed to you under the [GNU General Public License version 3](https://www.gnu.org/licenses/gpl-3.0.en.html).
+This theme has been licensed under the [GNU General Public License version 3](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
 This means that this theme can be shared and ported over to different websites, including commercial websites. Other works and plugins used as part of this theme are licensed under their own agreements.
 
