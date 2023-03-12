@@ -1,7 +1,21 @@
+<?php
+/**
+ * Footer Template
+ * @package WordPress
+ * @subpackage Project_Zero
+ * @since 0.1
+ * 
+ * This file is called with get_footer().
+ * Save this file as footer-{filename}.php to save a specialised footer. You can call it with get_footer('filename').
+ * 
+ * For more information, check out
+ * @link https://developer.wordpress.org/reference/functions/get_footer/
+ */
+?>
     </main>
-    <footer id="siteFooter">
-      <section id="footerMain">
-        <div class="container clearfix">
+    <footer id="sitefooter">
+      <section id="mainfooter">
+        <div class="container row clearfix">
           <div class="footerCol" id="footerCol-one">
             <?php if ( is_active_sidebar( 'footer-sidebar-one' ) && !dynamic_sidebar( 'footer-sidebar-one' ) ) : ?>
               <!-- Footer Sidebar One is missing content -->

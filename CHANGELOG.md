@@ -1,6 +1,18 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.3] - 2023-01-26
+### Added
+* Added `theme.json` file
+* Added custom post type template (go to plugin)
+* Added custom metabox template (go to plugin)
+* Added `single-portfolio.php` and `archive-portfolio.php` for custom post types (CPT file is in `p0-plugin`)
+* Added custom taxonomy (categories and tags) (go to plugin)
+
+### Updated
+* Updated `YahnisElsts/plugin-update-checker` to `v5.0.0`
+* Cleaned up `wp_head` and `wp_admin_head` code (moved to `inc/header.php`)
+
 ## [0.2.1] - 2021-11-01
 ### Added
 * Added hooks to remove functions that could be exploited
