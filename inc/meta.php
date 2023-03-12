@@ -7,7 +7,6 @@
     <p>
       <?php if ( comments_open() ){ ?>
       <span class="postComments-enabled">
-        <span class="fas fa-comment postMeta-icon"></span>
         <?php
           $number = (int) get_comments_number( get_the_ID() );
           if ( $number > 0 ){
@@ -20,7 +19,6 @@
       </span>
       <?php } else { ?>
       <span class="postComments-disabled">
-        <span class="fas fa-comment postMeta-icon"></span>
         Comments disabled
       </span>
       <?php } ?>
