@@ -1,22 +1,31 @@
 <?php
 
 /**
+ * Get Plugin Update Checker script - thanks to @author YahnisElsts for this.
+ * Get the latest version from @link https://github.com/YahnisElsts/plugin-update-checker
+ * As of @version 5.0, this script MUST be called before any other function
+ */
+require_once STYLESHEETPATH . '/inc/functions/puc/plugin-update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5p0\PucFactory;
+
+/**
  * Get base theme information, as defined in style.css.  
- * You can then call them using @param $mytheme->get()
+ * You can then call them using @var $mytheme->get()
  */
 $mytheme = wp_get_theme();
 
+/**
+ * Checks if you are currently in the wp-admin area
+ */
 if ( is_admin() ){
 
   /**
-   * Get Plugin Update Checker script - thanks to YahnisElsts for this.
-   * Get the latest version from https://github.com/YahnisElsts/plugin-update-checker
+   * Runs the plugin-update-checker script called earlier
    * Only runs when logged in to wp-admin
    */
-  require_once STYLESHEETPATH . '/inc/functions/puc/plugin-update-checker.php';
-  $checkTheme = Puc_v4_Factory::buildUpdateChecker(
-	  $mytheme->get('ThemeURI'), // This can be any public repo on GitHub, or any file on your own server, defaults to the Theme URI value in style.css
-    __FILE__, //Full path to the main plugin file or functions.php.
+  $checkTheme = PucFactory::buildUpdateChecker(
+	  $mytheme->get('ThemeURI'), // This can be any public repo on GitHub, or any file on your own server. Defaults to the Theme URI value in style.css
+    __FILE__, // Full path to the main plugin file or functions.php.
     $mytheme->get('TextDomain'), // Uses the 'Text Domain' string as defined in style.css
   );
   // Enables releases via GitHub
@@ -24,20 +33,20 @@ if ( is_admin() ){
   
   /**
    * Call TGM Plugin Activation script - thanks to the TGMPA team for this
-   * Get the latest version from https://github.com/TGMPA/TGM-Plugin-Activation
+   * Get the latest version from @link https://github.com/TGMPA/TGM-Plugin-Activation
    * Only runs when logged in to wp-admin
    */
   require_once STYLESHEETPATH . '/inc/functions/tgmpa/tgmpa.php';
 
   /**
    * Call the notification script and display a notification - thanks to Askupa Software for this 
-   * Get the latest verison from https://github.com/askupasoftware/wp-admin-notification
+   * Get the latest verison from @link https://github.com/askupasoftware/wp-admin-notification
    * Only runs when logged in to wp-admin
    */
   require_once STYLESHEETPATH . '/inc/functions/wpan/bootstrap.php';
 
   /**
-   * Display notification for theme
+   * Display notification for theme, using wp-admin-notification
    */
   wp_admin_notification( 
     'notification-id', // Set your unique notification ID
@@ -49,106 +58,41 @@ if ( is_admin() ){
 }
 
 /**
- * Load scripts and stylesheets into the front end of the theme
- * Files loaded here will not be loaded in the wp-admin area
+ * Contains functions to register and enqueue scripts for @filter wp_enqueue_scripts and 
  */
-function myTheme_loadScriptsStyles(){
-
-  // Main Stylesheet
-  wp_enqueue_style('main', get_stylesheet_directory_uri().'/css/main.css');
-
-  // Fonts (from Google Fonts)
-  wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i,800,800i&display=swap');
-
-  // Load FontAwesome (remotely) - See DOCS for how to enable FontAwesome
-  // wp_enqueue_script('fontawesome-js', 'https://kit.fontawesome.com/MY-KIT-ID.js', array(), '0.0.0');
-
-  // Media sheets
-  // If you want to use one stylesheet for your site, you can remove these additional CSS files.
-  wp_enqueue_style('desktop', get_stylesheet_directory_uri().'/css/desktop.css', array(), '', 'only screen and (min-width: 1025px)');
-  wp_enqueue_style('tablet', get_stylesheet_directory_uri().'/css/tablet.css', array(), '', 'only screen and (min-width: 801px) and (max-width: 1024px)');
-  wp_enqueue_style('mobile', get_stylesheet_directory_uri().'/css/mobile.css', array(), '', 'only screen and (max-width: 800px)');
-
-}
-add_action('wp_enqueue_scripts', 'myTheme_loadScriptsStyles');
+require_once STYLESHEETPATH . '/inc/header.php';
 
 /**
- * Load scripts and styles within the wp-admin area
- * Files loaded here will not be loaded in the front end of the theme
+ * Contains functions to manipulate the wp-json API
  */
-function myTheme_loadAdminScriptsStyles(){
-  wp_enqueue_style('admin_styles', get_stylesheet_directory_uri() . '/css/admin.css');
-}
-add_action('admin_enqueue_scripts','myTheme_loadAdminScriptsStyles');
+require_once STYLESHEETPATH . '/inc/wp-json.php';
 
 /**
- * Remove functions from <head> that could be exploited
+ * Contains the 'portfolio' custom post type.  Contains custom taxonomies (categories and tags) and custom metabox, which are assigned to the post type.
  */
-remove_action('wp_head', 'rsd_link'); // remove really simple discovery link
-remove_action('wp_head', 'wp_generator'); // remove wordpress version
+require_once STYLESHEETPATH . '/inc/custom-type.php';
 
-remove_action('wp_head', 'feed_links', 2); // remove rss feed links (make sure you add them in yourself if youre using feedblitz or an rss service)
-remove_action('wp_head', 'feed_links_extra', 3); // removes all extra rss feed links
+/**
+ * Contains the custom meta box.  Contains custom taxonomies (categories and tags) and custom metabox, which are assigned to the post type.
+ */
+require_once STYLESHEETPATH . '/inc/custom-metabox.php';
 
-remove_action('wp_head', 'index_rel_link'); // remove link to index page
-remove_action('wp_head', 'wlwmanifest_link'); // remove wlwmanifest.xml (needed to support windows live writer)
+/**
+ * Get blog pagination script - calls the blogPagination() function
+ */
+include_once STYLESHEETPATH . '/inc/functions/page-nav.php';
 
-remove_action('wp_head', 'start_post_rel_link', 10, 0); // remove random post link
-remove_action('wp_head', 'parent_post_rel_link', 10, 0); // remove parent post link
-remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0); // remove the next and previous post links
-remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
-      
-remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-remove_action( 'wp_print_styles', 'print_emoji_styles' );
-      
-remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0); // Remove shortlink
-
-/*
-* Remove JSON API links in header html
-*/
-function myTheme_removeJSON_API() {
-
-  // Remove the REST API lines from the HTML Header
-  remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
-  remove_action( 'wp_head', 'wp_oembed_add_discovery_links', 10 );
-
-  // Remove the REST API endpoint.
-  remove_action( 'rest_api_init', 'wp_oembed_register_route' );
-
-  // Turn off oEmbed auto discovery.
-  add_filter( 'embed_oembed_discover', '__return_false' );
-
-  // Don't filter oEmbed results.
-  remove_filter( 'oembed_dataparse', 'wp_filter_oembed_result', 10 );
-
-  // Remove oEmbed discovery links.
-  remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
-
-  // Remove oEmbed-specific JavaScript from the front-end and back-end.
-  remove_action( 'wp_head', 'wp_oembed_add_host_js' );
-
-}
-add_action( 'after_setup_theme', 'myTheme_removeJSON_API' );
-
-/*
-	Snippet completely disable the REST API and shows {"code":"rest_disabled","message":"The REST API is disabled on this site."} 
-	when visiting http://yoursite.com/wp-json/
-*/
-function myTheme_disableJSON_API() {
-
-  // Filters for WP-API version 1.x
-  add_filter('json_enabled', '__return_false');
-  add_filter('json_jsonp_enabled', '__return_false');
-
-  // Filters for WP-API version 2.x
-  add_filter('rest_enabled', '__return_false');
-  add_filter('rest_jsonp_enabled', '__return_false');
-
-}
-add_action( 'after_setup_theme', 'myTheme_disableJSON_API' );
+/**
+ * Load sidebars, including footer sidebars
+ */
+include_once STYLESHEETPATH . '/inc/functions/sidebars.php';
 
 /**
  * Set a default avatar for the theme
+ * 
+ * @param string $myavatar The URL of the avatar, as saved in the theme
+ * @param string $avatar_defaults[$myavatar] Descriptive name of the avatar
+ * @return array $avatar_defaults
  */
 function myTheme_defaultAvatar($avatar_defaults) {
     $myavatar = get_stylesheet_directory_uri() . '/images/default-avatar.png';
@@ -191,16 +135,6 @@ function myTheme_homeTitle( $title ){
   }
   return $title;
 }
-
-/**
- * Get blog pagination script - calls the blogPagination() function
- */
-include_once STYLESHEETPATH . '/inc/functions/page-nav.php';
-
-/**
- * Load sidebars, including footer sidebars
- */
-include_once STYLESHEETPATH . '/inc/functions/sidebars.php';
 
 /**
  * Add navigation menu support
