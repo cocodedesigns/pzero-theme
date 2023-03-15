@@ -38,9 +38,9 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-  <div id="pagewrap">
-    <header id="siteheader">
-      <div class="container">
+  <div id="page-wrap">
+    <header id="site-header">
+      <div class="container row">
         <figure id="logo">
           <a href="<?php echo get_option('home'); ?>/" title="<?php bloginfo('name'); ?>">
           <?php 
@@ -54,13 +54,21 @@
             <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/project-zero-logo.png" width="300" />
           <?php } ?>
           </a>
-        </figure>
-        <nav id="sitemenu">
+        </figure> <!-- #logo -->
+        <figure id="mobile-menu">
+          <label for="menu-check">
+            <input type="checkbox" id="menu-check" name="menu-check" /> 
+            <div class="burger menu button">
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </div> <!-- .menu -->
+          </label>
+        </figure> <!-- #mobile-menu -->
+        <nav id="header-menu">
           <div class="menu-container">
             <?php wp_nav_menu( array('theme_location' => 'header_menu', 'container_class' => 'menuwrap' ) ); ?>
           </div>
-        </nav>
-      </div>
-    </header>
-    <script>
-    <main id="mainbody">
+        </nav> <!-- #sitemenu -->
+      </div> <!-- .container -->
+    </header> <!-- #siteheader -->
+    <main id="main-body">

@@ -15,7 +15,7 @@
             <p><a href="<?php the_permalink(); ?>"><?php the_permalink(); ?></a></p>
           </div>
           <div class="postExcerpt"><?php echo wpautop( get_the_excerpt() ); ?></div>
-				  <?php include (TEMPLATEPATH . '/inc/meta.php' ); ?>
+				  <?php include (STYLESHEETPATH . '/inc/meta.php' ); ?>
         </article>
       <?php endwhile; ?>
         <?php blogPagination(); ?>
