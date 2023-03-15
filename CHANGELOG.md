@@ -8,6 +8,8 @@ All notable changes to this project will be documented in this file.
 * Added custom metabox template (go to plugin)
 * Added `single-portfolio.php` and `archive-portfolio.php` for custom post types (CPT file is in `p0-plugin`)
 * Added custom taxonomy (categories and tags) (go to plugin)
+* Added `template_part` to `index.php` and `archive.php`
+* Added alternative layouts for `index.php` and `archive.php` - without sidebar and 3-up grid
 
 ### Updated
 * Updated `YahnisElsts/plugin-update-checker` to `v5.0.0`
