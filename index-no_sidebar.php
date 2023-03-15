@@ -1,6 +1,6 @@
 <?php 
 /**
- * Blog Index Template (grid layout, 3 posts per row, without sidebar)
+ * Blog Index Template (single column, without sidebar)
  * @package WordPress
  * @subpackage Project_Zero
  * @since 0.1
@@ -22,9 +22,9 @@
   </section> <!-- #archive-title -->
   <section id="blog-archive" class="blog-archive archive-page">
     <div class="container">
-      <main id="archive-content" class="blog-posts row">
+      <main id="archive-content" class="blog-posts">
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-          <?php get_template_part( 'inc/parts/post', 'archive_3up' ); ?>
+          <?php get_template_part( 'inc/parts/post', 'archive' ); ?>
         <?php endwhile; // Stops looping through the posts in WP_Query ?>
           <?php blogPagination(); ?>
         <?php else : // If there are no posts in the loop ?>

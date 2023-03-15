@@ -1,7 +1,6 @@
 <div class="postMeta clearfix">
   <div class="postMeta-date metaElement">
-    <p><span class="fas fa-calendar postMeta-icon"></span>
-      Posted on <a href="<?php the_permalink(); ?>"><?php echo get_the_date('F j, Y', '', ''); ?></a> by <?php the_author_posts_link(); ?></p>
+    <p>Posted on <a href="<?php the_permalink(); ?>"><?php echo get_the_date('F j, Y', '', ''); ?></a> by <?php the_author_posts_link(); ?></p>
   </div>
   <div class="postMeta-comments metaElement">
     <p>

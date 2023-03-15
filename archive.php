@@ -1,49 +1,69 @@
-<?php get_header(); ?>
-  <section id="pageTitle" class="archiveTitle pageTitle">
+<?php 
+/**
+ * Blog Index Template
+ * @package WordPress
+ * @subpackage Project_Zero
+ * @since 0.1
+ * 
+ * This is a catch-all template for any pages that do not have a specialised template.
+ * You can find out more about the Template Hierarchy at
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * 
+ * Typically, index.php contains your blog archive template (content that could also be displayed in a home.php file).
+ * However, it is used for any content that does not have a specific template.
+ */
+
+  get_header();
+?>
+  <section id="archive-title" class="archive-title page-title">
     <div class="container">
       <h1>
         <?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
         <?php /* If this is a category archive */ 
-          if (is_category()) { ?>Archive for the &#8216;<?php single_cat_title(); ?>&#8217; Category<?php }
+          if ( is_category() ) { 
+            echo sprintf( __( 'Archive for the &#8216;%s&#8217; category', 'my cat' ), single_cat_title('', false) );
+          }
           /* If this is a tag archive */ 
-          elseif( is_tag() ) { ?>Posts Tagged &#8216;<?php single_tag_title(); ?>&#8217;<?php }
+          elseif( is_tag() ) {
+            echo sprintf( __( 'Posts tagged &#8216;%s&#8217;', 'my tag' ), single_tag_title('', false) );
+          }
           /* If this is a daily archive */
-          elseif (is_day()) { ?>Archive for <?php the_time('F jS, Y'); ?><?php }
+          elseif ( is_day() ) {
+            echo sprintf( __( 'Archive for %s', 'my date' ), get_the_time('F jS, Y') );
+          }
           /* If this is a monthly archive */
-          elseif (is_month()) { ?>Archive for <?php the_time('F, Y'); ?><?php }
+          elseif ( is_month() ) {
+            echo sprintf( __( 'Archive for %s', 'my date' ), get_the_time('F, Y') );
+          }
           /* If this is a yearly archive */
-          elseif (is_year()) { ?>Archive for <?php the_time('Y'); ?><?php }
+          elseif ( is_year() ) {
+            echo sprintf( __( 'Archive for %s', 'my date' ), get_the_time('Y') );
+          }
           /* If this is an author archive */
-          elseif (is_author()) { ?>Author Archive<?php }
+          elseif ( is_author() ) {
+            echo sprintf( __( 'Archive for %s', 'my author' ), get_the_author() );
+          }
           /* If this is a paged archive */
-          elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>Blog Archives<?php } ?>
+          elseif ( isset( $_GET['paged'] ) && !empty( $_GET['paged'] ) ) {
+            echo __( 'Blog archives' );
+          } ?>
       </h1>
-    </div>
-  </section>
-  <div id="container" class="pageContainer container">
-    <section class="mainContent" id="blogArchive">
-      <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <article id="post-<?php the_ID(); ?>" <?php post_class() ?>>
-        <?php 
-          if ( has_post_thumbnail() ) {
-            $featured = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'large' );
-          ?>
-            <div class="featuredImage postImage" style="background-image: url('<?php echo $featured[0]; ?>');">></div>
-          <?php } ?>
-          <div class="postContent">
-            <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-            <?php include (TEMPLATEPATH . '/inc/meta.php' ); ?>
-            <div class="entry">
-              <?php the_excerpt(); ?>
-            </div>
-          </div>
-        </article>
-      <?php endwhile; ?>
-        <?php blogPagination(); ?>
-      <?php else : ?>
-        <h2>Not Found</h2>
-      <?php endif; ?>
-    </section>
-    <?php get_sidebar(); ?>
-  </div>
+    </div> <!-- .container -->
+  </section> <!-- #archive-title -->
+  <section id="blog-archive" class="blog-archive archive-page">
+    <div class="container">
+      <main id="archive-content" class="blog-posts col-8">
+        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+          <?php get_template_part( 'inc/parts/post', 'archive' ); ?>
+        <?php endwhile; // Stops looping through the posts in WP_Query ?>
+          <?php blogPagination(); ?>
+        <?php else : // If there are no posts in the loop ?>
+          404
+        <?php endif; // Ends the loop ?>
+      </main> <!-- #archive-content -->
+      <aside id="blog-sidebar" class="col-4">
+        <?php get_sidebar(); ?>
+      </aside> <!-- #blog-sidebar -->
+    </div> <!-- .container -->
+  </section> <!-- #blog-archive -->
 <?php get_footer(); ?>
