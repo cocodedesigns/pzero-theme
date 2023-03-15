@@ -24,17 +24,17 @@ if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
   <section id="page-title" class="page-title">
     <div class="container">
       <h1><?php the_title(); ?></h1>
-    </div> <!-- .container -->
-  </section> <!-- #page-title -->
+    </div>
+  </section>
   <section id="page-<?php the_ID(); ?>" class="single-page container">
     <div id="page-content" <?php post_class() ?>>
       <article class="post-content">
         <div class="entry">
           <?php the_content(); ?>
-        </div> <!-- .entry -->
-      </article> <!-- .post-content -->
-    </div> <!-- #page-content -->
-  </section> <!-- #page-{page_id} -->
+        </div>
+      </article>
+    </div>
+  </section>
 <?php 
   endwhile; endif; 
   get_footer(); 
