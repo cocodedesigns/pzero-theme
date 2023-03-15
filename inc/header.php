@@ -6,20 +6,10 @@
  */
 function myTheme_loadScriptsStyles(){
 
+  // jQuery
+  wp_enqueue_script( 'jquery' );
   // Main Stylesheet
   wp_enqueue_style('main', get_stylesheet_directory_uri().'/css/main.css');
-
-  // Fonts (from Google Fonts)
-  wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i,800,800i&display=swap');
-
-  // Load FontAwesome (remotely) - See DOCS for how to enable FontAwesome
-  // wp_enqueue_script('fontawesome-js', 'https://kit.fontawesome.com/MY-KIT-ID.js', array(), '0.0.0');
-
-  // Media sheets
-  // If you want to use one stylesheet for your site, you can remove these additional CSS files.
-  wp_enqueue_style('desktop', get_stylesheet_directory_uri().'/css/desktop.css', array(), '', 'only screen and (min-width: 1025px)');
-  wp_enqueue_style('tablet', get_stylesheet_directory_uri().'/css/tablet.css', array(), '', 'only screen and (min-width: 801px) and (max-width: 1024px)');
-  wp_enqueue_style('mobile', get_stylesheet_directory_uri().'/css/mobile.css', array(), '', 'only screen and (max-width: 800px)');
 
 }
 add_action('wp_enqueue_scripts', 'myTheme_loadScriptsStyles');

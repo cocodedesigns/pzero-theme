@@ -68,19 +68,14 @@ require_once STYLESHEETPATH . '/inc/header.php';
 require_once STYLESHEETPATH . '/inc/wp-json.php';
 
 /**
- * Contains the 'portfolio' custom post type.  Contains custom taxonomies (categories and tags) and custom metabox, which are assigned to the post type.
+ * Get blog pagination script - calls the blogPagination() function
  */
-require_once STYLESHEETPATH . '/inc/custom-type.php';
-
-/**
- * Contains the custom meta box.  Contains custom taxonomies (categories and tags) and custom metabox, which are assigned to the post type.
- */
-require_once STYLESHEETPATH . '/inc/custom-metabox.php';
+include_once STYLESHEETPATH . '/inc/functions/page-nav.php';
 
 /**
  * Get blog pagination script - calls the blogPagination() function
  */
-include_once STYLESHEETPATH . '/inc/functions/page-nav.php';
+include_once STYLESHEETPATH . '/inc/options/options-subpage.php';
 
 /**
  * Load sidebars, including footer sidebars
@@ -107,16 +102,6 @@ add_filter( 'avatar_defaults', 'myTheme_defaultAvatar' );
 if ( function_exists('add_theme_support') ) {
 	add_theme_support( 'post-thumbnails' );
 }
-
-/**
- * Fixes conflict with some jQuery scripts where `$` will not fire a script
- */
-function myTheme_jqueryNoConflict(){
-  ?>
-  <script>$=jQuery.noConflict();</script>
-  <?php
-}
-add_action('wp_head', 'myTheme_jqueryNoConflict');
 
 /**
  * Ensures page <title> is displayed on pages and posts.
