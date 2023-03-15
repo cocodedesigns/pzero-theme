@@ -15,19 +15,19 @@
   get_header();
 ?>
   <section id="error-page" class="error-page container">
-    <div id="page-content" <?php post_class() ?>>
-      <section class="page-title">
+    <main id="page-content" <?php post_class() ?>>
+      <section class="title-section">
         <h1 class="page-title"><?php _e( 'Error 404 - Page Not found', 'zero-theme' ); ?></h1>
-      </section>
+      </section> <!-- .title-section -->
       <section class="page-content">
-        <div class="entry">
+        <article class="entry">
           <p><?php _e( 'Seems the page you were looking for can\'t be found on our site.  It\'s either been deleted, the URL might be wrong, or you might have clicked on the wrong link.', 'zero-theme' ); ?></p>
           <p><?php _e( 'Check the URL or use the menu above to try again.  You can also use the search form below.  If you still can\'t find the page you\'re looking for, get in touch with us and let us know which URL you are typing so we can fix it on our side.', 'zero-theme' ); ?></p>
-        </div>
-        <div id="error-search" class="searchbox error-search">
+        </article> <!-- .entry -->
+        <section id="error-search" class="searchbox error-search">
           <?php echo get_search_form(); ?>
-        </div>
-      </section>
-    </div>
-  </section>
+        </section> <!-- #error-search -->
+      </section> <!-- .page-content -->
+    </main> <!-- #page-content -->
+  </section> <!-- #error-page -->
 <?php get_footer(); ?>
