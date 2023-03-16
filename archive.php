@@ -51,7 +51,7 @@
     </div> <!-- .container -->
   </section> <!-- #archive-title -->
   <section id="blog-archive" class="blog-archive archive-page">
-    <div class="container">
+    <div class="container row">
       <main id="archive-content" class="blog-posts col-8">
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
           <?php get_template_part( 'inc/parts/post', 'archive' ); ?>

@@ -1,7 +1,7 @@
 <?php 
 /**
- * Template Name: Custom Page Template
- * Template Post Type: page
+ * Template Name: Custom Post Template
+ * Template Post Type: post
  * @package WordPress
  * @subpackage Project_Zero
  * @since 0.3
