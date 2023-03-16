@@ -12,33 +12,33 @@
  * @link https://developer.wordpress.org/reference/functions/get_footer/
  */
 ?>
-    </main>
-    <footer id="sitefooter">
-      <section id="mainfooter">
+    </main> <!-- #main-body -->
+    <footer id="site-footer">
+      <section id="main-footer">
         <div class="container row clearfix">
-          <div class="footerCol" id="footerCol-one">
+          <div class="footer-sidebar col-3" id="footerbar-one">
             <?php if ( is_active_sidebar( 'footer-sidebar-one' ) && !dynamic_sidebar( 'footer-sidebar-one' ) ) : ?>
               <!-- Footer Sidebar One is missing content -->
             <?php endif; ?>
-          </div>
-          <div class="footerCol" id="footerCol-two">
+          </div> <!-- #footerbar-one -->
+          <div class="footer-colusidebarmn col-3" id="footerbar-two">
             <?php if ( is_active_sidebar( 'footer-sidebar-two' ) && !dynamic_sidebar( 'footer-sidebar-two' ) ) : ?>
               <!-- Footer Sidebar Two is missing content -->
             <?php endif; ?>
-          </div>
-          <div class="footerCol" id="footerCol-three">
+          </div> <!-- #footerbar-two -->
+          <div class="footer-sidebar col-3" id="footerbar-three">
             <?php if ( is_active_sidebar( 'footer-sidebar-three' ) && !dynamic_sidebar( 'footer-sidebar-three' ) ) : ?>
               <!-- Footer Sidebar Three is missing content -->
             <?php endif; ?>
-          </div>
-          <div class="footerCol" id="footerCol-four">
+          </div> <!-- #footerbar-three -->
+          <div class="footer-sidebar col-3" id="footerbar-four">
             <?php if ( is_active_sidebar( 'footer-sidebar-four' ) && !dynamic_sidebar( 'footer-sidebar-four' ) ) : ?>
               <!-- Footer Sidebar Four is missing content -->
             <?php endif; ?>
-          </div>
-        </div>
-      </section>
-      <section id="footerCopyright">
+          </div> <!-- #footerbar-four -->
+        </div> <!-- .container.row -->
+      </section> <!-- #main-footer -->
+      <section id="footer-copyright">
         <div class="container">
           <p>&copy;<?php echo date("Y"); echo " "; bloginfo('name'); ?></p>
           <p><?php
@@ -47,10 +47,10 @@
             <?php } else { ?>
               <a href="<?php echo wp_login_url( get_permalink() ); ?>">Login</a>
             <?php } ?></p>
-        </div>
-      </section>
-    </footer>
-  </div>
+        </div> <!-- .container -->
+      </section> <!-- #footer-copyright -->
+    </footer> <!-- #site-footer -->
+  </div> <!-- #page-wrap -->
   <?php wp_footer(); ?>
   <!-- Don't forget to add analytics -->
 </body>
