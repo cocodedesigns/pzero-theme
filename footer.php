@@ -21,7 +21,7 @@
               <!-- Footer Sidebar One is missing content -->
             <?php endif; ?>
           </div> <!-- #footerbar-one -->
-          <div class="footer-colusidebarmn col-3" id="footerbar-two">
+          <div class="footer-sidebar col-3" id="footerbar-two">
             <?php if ( is_active_sidebar( 'footer-sidebar-two' ) && !dynamic_sidebar( 'footer-sidebar-two' ) ) : ?>
               <!-- Footer Sidebar Two is missing content -->
             <?php endif; ?>
@@ -40,12 +40,14 @@
       </section> <!-- #main-footer -->
       <section id="footer-copyright">
         <div class="container">
-          <p>&copy;<?php echo date("Y"); echo " "; bloginfo('name'); ?></p>
-          <p><?php
+          <p class="copyright">
+            <?php echo '&copy; ' . date("Y") . " " . get_bloginfo('name') . '. All rights reserved.'; ?>
+          </p>
+          <p class="login"><?php
             if ( is_user_logged_in() ){ ?>
               <a href="<?php echo admin_url(); ?>">Dashboard</a> | <a href="<?php echo wp_logout_url( home_url() ); ?>">Logout</a>
             <?php } else { ?>
-              <a href="<?php echo wp_login_url( get_permalink() ); ?>">Login</a>
+              <a href="<?php echo wp_login_url( home_url() ); ?>">Login</a>
             <?php } ?></p>
         </div> <!-- .container -->
       </section> <!-- #footer-copyright -->

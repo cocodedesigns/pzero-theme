@@ -32,7 +32,7 @@
 			<div class="widget-content">
 				<ul class="widget-list page-list">
 					<?php wp_list_pages('title_li='); ?>
-				</ul>
+				</ul> <!-- .page-list -->
 			</div> <!-- .widget-content -->
 		</div> <!-- #widget-page_list -->
 

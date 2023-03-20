@@ -126,7 +126,31 @@ a img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
 .navigation .archiveNav .nextPosts{ float: right; }
 .navigation .archiveNav .previousPosts{ float: left; }
 
-/* Single Post */
+/* Single */
+/* Taxonomies */
+.single-post .taxonomy-section .taxonomy-list{ list-style: none; margin: 0; padding: 0 0 18px; }
+.single-post .taxonomy-section .taxonomy-list .list-item{ display: inline-block; margin: 0 12px 8px 0; }
+.single-post .taxonomy-section .taxonomy-list .list-item .item-link{ display: inline-block; height: 36px; line-height: 36px; position: relative; margin: 0; -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2); box-shadow: 0 1px 2px rgba(0,0,0,0.2); color: #fff; font-size: 14px; text-decoration: none; text-shadow: 0 1px 2px rgba(0,0,0,0.2); white-space: nowrap; }
+/* Categories */
+.single-post #post-categories .categories .category-link{ padding: 0 12px; background: #202020; border-radius: 3px; }
+.single-post #post-categories .categories .category-link:hover{ background-color: #6F6F6F; }
+/* Tags */
+.single-post .taxonomy-section .taxonomy-list.tags .list-item.tag{ padding-left: 16px; }
+.single-post #post-tags .tags .tag-link{ padding: 0 14px 0 18px; background: #3243A5; border-radius: 0 3px 3px 0; }
+.single-post #post-tags .tags .tag-link:before{ content: ""; position: absolute; top: 0; left: -18px; width: 0; height: 0; border-color: transparent #3243A5 transparent transparent; border-style: solid; border-width: 18px 18px 18px 0; }
+.single-post #post-tags .tags .tag-link:after{ content: ""; position: absolute; top: 50%; transform: translateY(-50%); left: 0; float: left; width: 8px; height: 8px; -webkit-border-radius: 50%; border-radius: 50%; background: #fff; -webkit-box-shadow: -1px -1px 2px rgba(0,0,0,0.4); box-shadow: -1px -1px 2px rgba(0,0,0,0.4); }
+.single-post #post-tags .tags .tag-link:hover{ background: #6F6F6F; }
+.single-post #post-tags .tags .tag-link:hover:before{ border-right-color: #6F6F6F; }
+/* Comment List */
+.single-post #post-comments .commentlist{ list-style: none; margin: 0; padding: 0; position: relative; }
+.single-post #post-comments .commentlist .comment-body{ position: relative; padding: 0 0 24px 84px; min-height: 64px; }
+.single-post #post-comments .commentlist .comment-body .avatar{ position: absolute; top: 0; left: 0; border-radius: 3px; }
+/* Comment Form */
+.single-post #post-comments #commentform label{ display: block; padding: 0 0 8px; }
+.single-post #post-comments #commentform input[type="text"], .single-post #post-comments #commentform input[type="email"], .single-post #post-comments #commentform input[type="url"], .single-post #post-comments #commentform textarea{ width: 100%; border: solid 1px #CFCFCF; padding: 8px; border-radius: 3px; font-size: 1rem; }
+.single-post #post-comments #commentform textarea{ resize: none; height: 200px; }
+.single-post #post-comments #allowed_tags{ line-height: 1.9; }
+.single-post #post-comments #allowed_tags .allowed-tag{ padding: 5px 9px; border-radius: 4px; margin: 0 4px 6px 0; font-size: 0.855rem; background-color: #CFCFCF; white-space: nowrap; }
 
 /* Single Page */
 
