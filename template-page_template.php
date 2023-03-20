@@ -2,6 +2,7 @@
 /**
  * Template Name: Custom Page Template
  * Template Post Type: page
+ * 
  * @package WordPress
  * @subpackage Project_Zero
  * @since 0.3
@@ -27,13 +28,13 @@ if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     </div> <!-- .container -->
   </section> <!-- #page-title -->
   <section id="page-<?php the_ID(); ?>" class="single-page container">
-    <div id="page-content" <?php post_class() ?>>
+    <main id="page-content" <?php post_class() ?>>
       <article class="post-content">
         <div class="entry">
           <?php the_content(); ?>
         </div> <!-- .entry -->
       </article> <!-- .post-content -->
-    </div> <!-- #page-content -->
+    </main> <!-- #page-content -->
   </section> <!-- #page-{page_id} -->
 <?php 
   endwhile; endif; 
