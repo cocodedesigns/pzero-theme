@@ -10,6 +10,8 @@ All notable changes to this project will be documented in this file.
 * Added custom taxonomy (categories and tags) (go to plugin)
 * Added `template_part` to `index.php` and `archive.php`
 * Added alternative layouts for `index.php` and `archive.php` - without sidebar and 3-up grid
+* Added Google Fonts ('Roboto') and Font Awesome `v6.3.0`
+* Added WordPress-compatible `readme.txt` file
 
 ### Updated
 * Updated `YahnisElsts/plugin-update-checker` to `v5.0.0`
