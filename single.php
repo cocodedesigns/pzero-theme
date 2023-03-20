@@ -16,14 +16,14 @@
   get_header();
   if ( have_posts() ) : while ( have_posts() ) : the_post(); 
 ?>
-  <section id="post-title" class="post-title">
+  <section id="post-title" class="post-title single-title">
     <div class="container">
       <h1><?php the_title(); ?></h1>
     </div> <!-- .container -->
   </section> <!-- #post-title -->
 
-  <section id="post-<?php the_ID(); ?>" class="single-post container">
-    <main id="post-content" <?php post_class() ?>>
+  <section id="post-<?php the_ID(); ?>" class="single-post container row">
+    <main id="post-content" <?php post_class('col-8') ?>>
 
       <?php if ( has_post_thumbnail() ) {
         /**
@@ -50,36 +50,8 @@
           
           <?php the_content(); ?>
           <?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
-          <?php the_tags( '<p>Tags: ', ', ', '</p>'); ?>
 
         </section> <!-- .entry -->
-
-        <section class="post-footer">
-          <p>This entry was posted by <?php the_author() ?>
-          on <time datetime="<?php the_time('Y-m-d')?>"><?php the_time('l, F jS, Y') ?></time>
-          at <time><?php the_time() ?></time>
-          and is filed under <?php the_category(', ') ?>.</p>
-          <p>You can follow any responses to this entry through the <?php post_comments_feed_link('RSS 2.0'); ?> feed.
-
-          <?php if ( comments_open() && pings_open() ) {
-            // Both Comments and Pings are open ?>
-            You can <a href="#respond">leave a response</a>, or <a href="<?php trackback_url(); ?>" rel="trackback">trackback</a> from your own site.
-
-          <?php } elseif ( !comments_open() && pings_open() ) {
-            // Only Pings are Open ?>
-            Responses are currently closed, but you can <a href="<?php trackback_url(); ?> " rel="trackback">trackback</a> from your own site.
-
-          <?php } elseif ( comments_open() && !pings_open() ) {
-            // Comments are open, Pings are not ?>
-            You can skip to the end and leave a response. Pinging is currently not allowed.
-
-          <?php } elseif ( !comments_open() && !pings_open() ) {
-            // Neither Comments, nor Pings are open ?>
-            Both comments and pings are currently closed.
-
-          <?php } edit_post_link('Edit this entry','','.'); ?>
-          </p>
-        </section>
 
         <section id="post-categories" class="taxonomy-section section-categories">
           <?php
@@ -88,18 +60,27 @@
              * If no ID number is declared, the function uses this post's ID number.
              */
             $categories = get_the_category();
-            if ( $categories ){
+
+            /**
+             * Checks if the number of terms in @param array $categories is more than 0 before displaying the results.
+             * Excludes queries where there is only one category AND the category is 'Uncategorised' (term_id 1).
+             */
+            if ( count( $categories ) > 0 && !( count( $categories ) == 1 && $categories[0]->term_id == 1 ) ){
           ?>
             <h3 class="section-title title-categories">Posted under:</h3>
-            <ul class="taxonomy-list caegories">
-              <?php foreach( $categories as $category ) { ?>
+
+            <ul class="taxonomy-list categories">
+              <?php foreach( $categories as $category ) {
+                if ( $category->term_id != 1 ){ // Checks if the category is NOT 'Uncategorised' (term_id 1) ?>
                 <li class="list-item category">
                   <a href="<?php echo get_category_link( $category->term_id ); ?>" class="item-link category-link" id="cat-<?php echo $category->term_id; ?>">
                     <?php echo $category->name; ?>
                   </a>
                 </li> <!-- .list-item.category -->
-              <?php } // Ends category foreach ?>
+              <?php } // Ends 'Uncategorised' conditional
+              } // Ends category foreach ?>
             </ul> <!-- .taxonomy-list -->
+
           <?php } else { } // Ends category conditional ?>
         </section> <!-- #post-categories -->
 
@@ -110,7 +91,11 @@
              * If no ID number is declared, the function uses this post's ID number.
              */
             $tags = get_the_tags();
-            if ( $tags ){
+
+            /**
+             * Checks if the @param array $tags exists.
+             */
+            if ( !empty( $tags ) && count( $tags ) > 0 ){
           ?>
 
             <h3 class="section-title title-tags">Tagged with:</h3>
@@ -118,7 +103,7 @@
             <ul class="taxonomy-list tags">
               <?php foreach( $tags as $tag ) { ?>
                 <li class="list-item tag">
-                  <a href="<?php echo get_tag_link( $tag->term_id ); ?>" class="item-link tag-link" id="tag-<?php echo $tag->term_id; ?>">
+                  <a href="<?php echo get_tag_link( $tag->term_id ); ?>" class="item-link tag-link" id="tag-<?php echo $tag->term_id; ?>" title="<?php echo $tag->name; ?>">
                     <?php echo $tag->name; ?>
                   </a>
                 </li> <!-- .list-item.tag -->
@@ -129,6 +114,8 @@
         </section> <!-- #post-tags -->
 
         <section id="post-navigation" class="navigation post-links">
+          <div class="previous_link"><?php previous_post_link('Previous link: %link') ?></div>
+          <div class="next_link"><?php next_post_link('Next link: %link') ?></div>
         </section> <!-- #post-navigation -->
 
         <section id="post-comments" class="comments">
@@ -139,7 +126,7 @@
 
     </main> <!-- #post-content -->
 
-    <aside id="blog-sidebar">
+    <aside id="blog-sidebar" class="col-4">
       <?php get_sidebar(); ?>
     </aside> <!-- #blog-sidebar -->
 

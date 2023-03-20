@@ -3,7 +3,7 @@
  * Blog Index Template (grid layout, 3 posts per row, without sidebar)
  * @package WordPress
  * @subpackage Project_Zero
- * @since 0.1
+ * @since 0.3
  * 
  * This is a catch-all template for any pages that do not have a specialised template.
  * You can find out more about the Template Hierarchy at
