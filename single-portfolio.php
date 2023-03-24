@@ -1,6 +1,6 @@
 <?php 
 /**
- * Single Page Template
+ * Custom Post Type ('portfolio') - Single Template
  * @package WordPress
  * @subpackage Project_Zero
  * @since 0.1
@@ -15,9 +15,9 @@
   get_header();
   if ( have_posts() ) : while ( have_posts() ) : the_post(); 
 ?>
-  <section id="project-title" class="project-title single-title">
+  <section id="project-title" class="project-title page-title single-title">
     <div class="container">
-      <h1><?php the_title(); ?></h1>
+      <h1 class="title"><?php the_title(); ?></h1>
     </div> <!-- .container -->
   </section> <!-- #project-title -->
 
@@ -49,14 +49,17 @@
     </main> <!-- #page-content -->
 
     <aside id="project-sidebar" class="col-4">
+      <!-- Client information -->
       <h6 class="project-meta meta-title client">Client:</h6>
       <p class="project-meta meta-data client">{CLIENT_NAME}</p>
 
-      <h6 class="project-meta meta-title services">Services:</h6>
-      <p class="project-meta meta-data services">{SERVICES}</p>
-
+      <!-- Website link -->
       <h6 class="project-meta meta-title website">Website:</h6>
       <p class="project-meta meta-data website">{WEBSITE_URL}</p>
+
+      <!-- Services custom taxonomy -->
+      <h6 class="project-meta meta-title services">Services:</h6>
+      <p class="project-meta meta-data services">{SERVICES}</p>
     </aside> <!-- #project-sidebar -->
 
   </section> <!-- #project-{page_id} -->
