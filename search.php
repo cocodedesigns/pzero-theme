@@ -33,7 +33,7 @@
             </div> <!-- .entry -->
           </article> <!-- result-{post_type}_{post_id} -->
         <?php endwhile; 
-          blogPagination();
+          blog_archive_pagination();
           else : ?>
           <h2>No posts found.</h2>
         <?php endif; ?>

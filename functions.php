@@ -68,12 +68,12 @@ require_once STYLESHEETPATH . '/inc/header.php';
 require_once STYLESHEETPATH . '/inc/wp-json.php';
 
 /**
- * Get blog pagination script - calls the blogPagination() function
+ * Get blog pagination script - calls the blog_archive_pagination() function
  */
 include_once STYLESHEETPATH . '/inc/functions/page-nav.php';
 
 /**
- * Get blog pagination script - calls the blogPagination() function
+ * Get blog pagination script - calls the blog_archive_pagination() function
  */
 include_once STYLESHEETPATH . '/inc/options/options-subpage.php';
 

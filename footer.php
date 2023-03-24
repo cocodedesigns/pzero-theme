@@ -16,26 +16,30 @@
     <footer id="site-footer">
       <section id="main-footer">
         <div class="container row clearfix">
-          <div class="footer-sidebar col-3" id="footerbar-one">
-            <?php if ( is_active_sidebar( 'footer-sidebar-one' ) && !dynamic_sidebar( 'footer-sidebar-one' ) ) : ?>
+          <aside class="footer-sidebar col-3" id="footerbar-one">
+            <?php if ( is_active_sidebar( 'footerbar-one' ) && dynamic_sidebar( 'footerbar-one' ) ) : ?>
+            <?php else : ?>
               <!-- Footer Sidebar One is missing content -->
             <?php endif; ?>
-          </div> <!-- #footerbar-one -->
-          <div class="footer-sidebar col-3" id="footerbar-two">
-            <?php if ( is_active_sidebar( 'footer-sidebar-two' ) && !dynamic_sidebar( 'footer-sidebar-two' ) ) : ?>
+          </aside> <!-- #footerbar-one -->
+          <aside class="footer-sidebar col-3" id="footerbar-two">
+            <?php if ( is_active_sidebar( 'footerbar-two' ) && dynamic_sidebar( 'footerbar-two' ) ) : ?>
+            <?php else : ?>
               <!-- Footer Sidebar Two is missing content -->
             <?php endif; ?>
-          </div> <!-- #footerbar-two -->
-          <div class="footer-sidebar col-3" id="footerbar-three">
-            <?php if ( is_active_sidebar( 'footer-sidebar-three' ) && !dynamic_sidebar( 'footer-sidebar-three' ) ) : ?>
+          </aside> <!-- #footerbar-two -->
+          <aside class="footer-sidebar col-3" id="footerbar-three">
+            <?php if ( is_active_sidebar( 'footerbar-three' ) && dynamic_sidebar( 'footerbar-three' ) ) : ?>
+            <?php else : ?>
               <!-- Footer Sidebar Three is missing content -->
             <?php endif; ?>
-          </div> <!-- #footerbar-three -->
-          <div class="footer-sidebar col-3" id="footerbar-four">
-            <?php if ( is_active_sidebar( 'footer-sidebar-four' ) && !dynamic_sidebar( 'footer-sidebar-four' ) ) : ?>
+          </aside> <!-- #footerbar-three -->
+          <aside class="footer-sidebar col-3" id="footerbar-four">
+            <?php if ( is_active_sidebar( 'footerbar-four' ) && dynamic_sidebar( 'footerbar-four' ) ) : ?>
+            <?php else : ?>
               <!-- Footer Sidebar Four is missing content -->
             <?php endif; ?>
-          </div> <!-- #footerbar-four -->
+          </aside> <!-- #footerbar-four -->
         </div> <!-- .container.row -->
       </section> <!-- #main-footer -->
       <section id="footer-copyright">

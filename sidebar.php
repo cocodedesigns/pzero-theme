@@ -21,14 +21,14 @@
 	?>
 
 		<div class="widget search_form" id="widget-search_form">
-			<h6 class="widget-title">Search</h6>
 			<div class="widget-content">
 				<?php get_search_form(); ?>
 			</div> <!-- .widget-content -->
 		</div> <!-- #widget-search_form -->
 
 		<div class="widget page_list" id="widget-page_list">
-			<h6 class="widget-title">Pages</h6>
+			<h6 class="widget-title"><span class="fa-solid fa-sitemap"></span> 
+				Pages</h6>
 			<div class="widget-content">
 				<ul class="widget-list page-list">
 					<?php wp_list_pages('title_li='); ?>
@@ -37,7 +37,8 @@
 		</div> <!-- #widget-page_list -->
 
 		<div class="widget post_archive" id="widget-post_archive">
-			<h6 class="widget-title">Monthly Archives</h6>
+			<h6 class="widget-title"><span class="fa-solid fa-calendar-days"></span>
+				Monthly Archives</h6>
 			<div class="widget-content">
 				<ul class="widget-list archive-list">
 					<?php wp_get_archives('type=monthly'); ?>
@@ -46,7 +47,8 @@
 		</div> <!-- #widget-post_archive -->
 
 		<div class="widget blog_categories" id="widget-blog_categories">
-			<h6 class="widget-title">Categories</h6>
+			<h6 class="widget-title"><span class="fa-solid fa-hashtag"></span>
+				Categories</h6>
 			<div class="widget-content">
 				<ul class="widget-list category-list">
 					<?php wp_list_categories('show_count=1&title_li='); ?>
@@ -54,31 +56,46 @@
 			</div> <!-- .widget-content -->
 		</div> <!-- #widget-blog_categories -->
 
-		<div class="widget blog_bookmarks" id="widget-blog_bookmarks">
-			<h6 class="widget-title">Bookmarks</h6>
-			<div class="widget-content">
-				<?php wp_list_bookmarks(); ?>
-			</div> <!-- .widget-content -->
-		</div> <!-- #widget-blog_bookmarks -->
-
 		<div class="widget blog_meta" id="widget-blog_meta">
-			<h6 class="widget-title">Meta</h6>
+			<h6 class="widget-title"><span class="fa-solid fa-link"></span>
+				Meta</h6>
 			<div class="widget-content">
 				<ul class="widget-list meta-links">
-					<?php wp_register(); ?>
-					<li><?php wp_loginout(); ?></li>
-					<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress</a></li>
+					<?php if ( !is_user_logged_in() ) { ?>
+					<li class="loginout-link"><a href="<?php echo esc_url( wp_login_url( get_permalink() ) ); ?>">
+						<span class="fa-solid fa-right-to-bracket"></span>
+						<?php echo _x( 'Log in', 'login link', 'zero-theme' ); ?></a></li>
+						<?php if ( get_option( 'users_can_register' ) ) { ?>
+						<li class="register-link"><a href="<?php echo esc_url( wp_registration_url() ); ?>">
+							<span class="fa-solid fa-user-plus"></span>
+							<?php echo _x( 'Register', 'register link', 'zero-theme' ); ?></a></li>
+						<?php } ?>
+					<?php } else { ?>
+						<?php if ( current_user_can( 'read' ) ){ ?>
+						<li class="wpadmin-link"><a href="<?php echo admin_url(); ?>">
+							<span class="fa-solid fa-gauge-high"></span>
+							<?php echo _x( 'Dashboard', 'wp-admin dashboard link', 'zero-theme' ); ?></a></li>
+						<?php } ?>
+					<li class="loginout-link"><a href="<?php echo esc_url( wp_logout_url( get_permalink() ) ); ?>">
+						<span class="fa-solid fa-right-from-bracket"></span>
+						<?php echo _x( 'Log out', 'logout link', 'zero-theme' ); ?></a></li>
+					<?php } ?>
+					<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">
+						<span class="fa-brands fa-wordpress-simple"></span> WordPress</a></li>
 					<?php wp_meta(); ?>
 				</ul> <!-- .meta-links -->
 			</div> <!-- .widget-content -->
 		</div> <!-- #widget-blog_meta -->
 
 		<div class="widget blog_subscribe" id="widget-blog_subscribe">
-			<h6 class="widget-title">Subscribe</h6>
+			<h6 class="widget-title"><span class="fa-solid fa-rss"></span>
+				Subscribe</h6>
 			<div class="widget-content">
 				<ul class="widget-list subscribe-links">
-					<li><a href="<?php bloginfo('rss2_url'); ?>">Entries (RSS)</a></li>
-					<li><a href="<?php bloginfo('comments_rss2_url'); ?>">Comments (RSS)</a></li>
+					<li><a href="<?php bloginfo('rss2_url'); ?>"><span class="icon fa-solid fa-square-rss"></span>
+						Entries (RSS)</a></li>
+					<li><a href="<?php bloginfo('comments_rss2_url'); ?>"><span class="icon fa-solid fa-square-rss"></span>
+						Comments (RSS)</a></li>
 				</ul> <!-- .subscribe-links -->
 			</div> <!-- .widget-content -->
 		</div> <!-- #widget-blog_subscribe -->

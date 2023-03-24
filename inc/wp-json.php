@@ -22,7 +22,7 @@ function myTheme_removeJSON_API() {
   remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
 
   // Remove oEmbed-specific JavaScript from the front-end and back-end.
-  remove_action( 'wp_head', 'wp_oembed_add_host_js' );
+  // remove_action( 'wp_head', 'wp_oembed_add_host_js' );
 
 }
 add_action( 'after_setup_theme', 'myTheme_removeJSON_API' );

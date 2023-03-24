@@ -8,8 +8,12 @@ function myTheme_loadScriptsStyles(){
 
   // jQuery
   wp_enqueue_script( 'jquery' );
+
   // Main Stylesheet
   wp_enqueue_style('main', get_stylesheet_directory_uri().'/css/main.css');
+
+  // FontAwesome
+  wp_enqueue_style('fontawesome', get_stylesheet_directory_uri().'/fonts/fontawesome/css/all.min.css', array(), '6.3.0');
 
 }
 add_action('wp_enqueue_scripts', 'myTheme_loadScriptsStyles');
