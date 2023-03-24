@@ -80,7 +80,7 @@ function __construct() {
 function settings_init(): void {
 
   // Register a new setting this page.
-  register_setting( 'my-plugin-settings', 'wporg_options' );
+  register_setting( 'my-plugin-settings', 'zeroTheme_options' );
 
 
   // Register a new section.
@@ -163,7 +163,7 @@ function render_field( array $args ): void {
   $field = $args['field'];
 
   // Get the value of the setting we've registered with register_setting()
-  $options = get_option( 'wporg_options' );
+  $options = get_option( 'zeroTheme_options' );
 
   switch ( $field['type'] ) {
 
@@ -172,7 +172,7 @@ function render_field( array $args ): void {
       <input
         type="text"
         id="<?php echo esc_attr( $field['id'] ); ?>"
-        name="wporg_options[<?php echo esc_attr( $field['id'] ); ?>]"
+        name="zeroTheme_options[<?php echo esc_attr( $field['id'] ); ?>]"
         value="<?php echo isset( $options[ $field['id'] ] ) ? esc_attr( $options[ $field['id'] ] ) : ''; ?>"
       >
       <p class="description">
@@ -187,7 +187,7 @@ function render_field( array $args ): void {
       <input
         type="checkbox"
         id="<?php echo esc_attr( $field['id'] ); ?>"
-        name="wporg_options[<?php echo esc_attr( $field['id'] ); ?>]"
+        name="zeroTheme_options[<?php echo esc_attr( $field['id'] ); ?>]"
         value="1"
         <?php echo isset( $options[ $field['id'] ] ) ? ( checked( $options[ $field['id'] ], 1, false ) ) : ( '' ); ?>
       >
@@ -202,7 +202,7 @@ function render_field( array $args ): void {
       ?>
       <textarea
         id="<?php echo esc_attr( $field['id'] ); ?>"
-        name="wporg_options[<?php echo esc_attr( $field['id'] ); ?>]"
+        name="zeroTheme_options[<?php echo esc_attr( $field['id'] ); ?>]"
       ><?php echo isset( $options[ $field['id'] ] ) ? esc_attr( $options[ $field['id'] ] ) : ''; ?></textarea>
       <p class="description">
         <?php esc_html_e( $field['description'], 'my-plugin-settings' ); ?>
@@ -215,7 +215,7 @@ function render_field( array $args ): void {
       ?>
       <select
         id="<?php echo esc_attr( $field['id'] ); ?>"
-        name="wporg_options[<?php echo esc_attr( $field['id'] ); ?>]"
+        name="zeroTheme_options[<?php echo esc_attr( $field['id'] ); ?>]"
       >
         <?php foreach( $field['options'] as $key => $option ) { ?>
           <option value="<?php echo $key; ?>" 
@@ -237,7 +237,7 @@ function render_field( array $args ): void {
       <input
         type="password"
         id="<?php echo esc_attr( $field['id'] ); ?>"
-        name="wporg_options[<?php echo esc_attr( $field['id'] ); ?>]"
+        name="zeroTheme_options[<?php echo esc_attr( $field['id'] ); ?>]"
         value="<?php echo isset( $options[ $field['id'] ] ) ? esc_attr( $options[ $field['id'] ] ) : ''; ?>"
       >
       <p class="description">
@@ -252,7 +252,7 @@ function render_field( array $args ): void {
         isset( $options[ $field['id'] ] ) ? $options[ $field['id'] ] : '',
         $field['id'],
         array(
-          'textarea_name' => 'wporg_options[' . $field['id'] . ']',
+          'textarea_name' => 'zeroTheme_options[' . $field['id'] . ']',
           'textarea_rows' => 5,
         )
       );
@@ -264,7 +264,7 @@ function render_field( array $args ): void {
       <input
         type="email"
         id="<?php echo esc_attr( $field['id'] ); ?>"
-        name="wporg_options[<?php echo esc_attr( $field['id'] ); ?>]"
+        name="zeroTheme_options[<?php echo esc_attr( $field['id'] ); ?>]"
         value="<?php echo isset( $options[ $field['id'] ] ) ? esc_attr( $options[ $field['id'] ] ) : ''; ?>"
       >
       <p class="description">
@@ -279,7 +279,7 @@ function render_field( array $args ): void {
       <input
         type="url"
         id="<?php echo esc_attr( $field['id'] ); ?>"
-        name="wporg_options[<?php echo esc_attr( $field['id'] ); ?>]"
+        name="zeroTheme_options[<?php echo esc_attr( $field['id'] ); ?>]"
         value="<?php echo isset( $options[ $field['id'] ] ) ? esc_attr( $options[ $field['id'] ] ) : ''; ?>"
       >
       <p class="description">
@@ -294,7 +294,7 @@ function render_field( array $args ): void {
       <input
         type="color"
         id="<?php echo esc_attr( $field['id'] ); ?>"
-        name="wporg_options[<?php echo esc_attr( $field['id'] ); ?>]"
+        name="zeroTheme_options[<?php echo esc_attr( $field['id'] ); ?>]"
         value="<?php echo isset( $options[ $field['id'] ] ) ? esc_attr( $options[ $field['id'] ] ) : ''; ?>"
       >
       <p class="description">
@@ -309,7 +309,7 @@ function render_field( array $args ): void {
       <input
         type="date"
         id="<?php echo esc_attr( $field['id'] ); ?>"
-        name="wporg_options[<?php echo esc_attr( $field['id'] ); ?>]"
+        name="zeroTheme_options[<?php echo esc_attr( $field['id'] ); ?>]"
         value="<?php echo isset( $options[ $field['id'] ] ) ? esc_attr( $options[ $field['id'] ] ) : ''; ?>"
       >
       <p class="description">
