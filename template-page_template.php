@@ -27,7 +27,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
       <h1><?php the_title(); ?></h1>
     </div> <!-- .container -->
   </section> <!-- #page-title -->
-  <section id="page-<?php the_ID(); ?>" class="single-page container">
+  <section id="page-<?php the_ID(); ?>" class="single-page container page-container">
     <main id="page-content" <?php post_class() ?>>
       <article class="post-content">
         <div class="entry">

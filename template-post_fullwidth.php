@@ -24,7 +24,23 @@ get_header();
 if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
   <section id="post-title" class="page-title">
     <div class="container">
-      <h1><?php the_title(); ?></h1>
+      <h1 class="post-title"><?php the_title(); ?></h1>
+      <p class="post-meta">
+        <span class="posted_onby meta-item">Posted on <a href="<?php the_permalink(); ?>"><?php echo get_the_date('F j, Y', '', ''); ?></a> by <?php the_author_posts_link(); ?></span>
+        <span class="meta-divider">|</span>
+        <?php if ( comments_open() ){ ?>
+        <span class="comments-enabled meta-item">
+          <?php
+            $number = (int) get_comments_number( get_the_ID() );
+            comments_popup_link( 'Leave a comment', '1 comment', '% comments', '', '');
+          ?>
+        </span>
+        <?php } else { ?>
+        <span class="comments-disabled meta-item">
+          Comments disabled
+        </span>
+        <?php } ?>
+      </p>
     </div> <!-- .container -->
   </section> <!-- #post-title -->
 
@@ -41,98 +57,99 @@ if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
   <figure class="featured-image full-width" style="background-image: url('<?php echo $featured[0]; ?>');"></figure>
   <?php } ?>
 
-  <section id="post-<?php the_ID(); ?>" class="single-post container row">
-    <main id="post-content" <?php post_class( array('col-8') ); ?>>
+  <section id="post-<?php the_ID(); ?>" class="single-post page-container">
 
-      <article class="post-content">
-          
-        <section class="post-meta">
-          <?php include ( STYLESHEETPATH . '/inc/meta.php' ); ?>
-        </section> <!-- .post-meta -->
+    <div class="container row">
 
-        <section class="entry">
-          
-          <?php the_content(); ?>
-          <?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
+      <main id="post-content" <?php post_class( array('col-8') ); ?>>
 
-        </section> <!-- .entry -->
+        <article class="post-content">
 
-        <section id="post-categories" class="taxonomy-section section-categories">
-          <?php
-            /**
-             * Gets the categories for this post.
-             * If no ID number is declared, the function uses this post's ID number.
-             */
-            $categories = get_the_category();
+          <section class="entry">
+            
+            <?php the_content(); ?>
+            <?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
 
-            /**
-             * Checks if the number of terms in @param array $categories is more than 0 before displaying the results.
-             * Excludes queries where there is only one category AND the category is 'Uncategorised' (term_id 1).
-             */
-            if ( count( $categories ) > 0 && !( count( $categories ) == 1 && $categories[0]->term_id == 1 ) ){
-          ?>
-            <h3 class="section-title title-categories">Posted under:</h3>
+          </section> <!-- .entry -->
 
-            <ul class="taxonomy-list categories">
-              <?php foreach( $categories as $category ) {
-                if ( $category->term_id != 1 ){ // Checks if the category is NOT 'Uncategorised' (term_id 1) ?>
-                <li class="list-item category">
-                  <a href="<?php echo get_category_link( $category->term_id ); ?>" class="item-link category-link" id="cat-<?php echo $category->term_id; ?>">
-                    <?php echo $category->name; ?>
-                  </a>
-                </li> <!-- .list-item.category -->
-              <?php } // Ends 'Uncategorised' conditional
-              } // Ends category foreach ?>
-            </ul> <!-- .taxonomy-list -->
+          <section id="post-categories" class="taxonomy-section section-categories">
+            <?php
+              /**
+               * Gets the categories for this post.
+               * If no ID number is declared, the function uses this post's ID number.
+               */
+              $categories = get_the_category();
 
-          <?php } else { } // Ends category conditional ?>
-        </section> <!-- #post-categories -->
+              /**
+               * Checks if the number of terms in @param array $categories is more than 0 before displaying the results.
+               * Excludes queries where there is only one category AND the category is 'Uncategorised' (term_id 1).
+               */
+              if ( count( $categories ) > 0 && !( count( $categories ) == 1 && $categories[0]->term_id == 1 ) ){
+            ?>
+              <h3 class="section-title title-categories">Posted under:</h3>
 
-        <section id="post-tags" class="taxonomy-section section-tags">
-          <?php
-            /**
-             * Gets the tags for this post.
-             * If no ID number is declared, the function uses this post's ID number.
-             */
-            $tags = get_the_tags();
+              <ul class="taxonomy-list categories">
+                <?php foreach( $categories as $category ) {
+                  if ( $category->term_id != 1 ){ // Checks if the category is NOT 'Uncategorised' (term_id 1) ?>
+                  <li class="list-item category">
+                    <a href="<?php echo get_category_link( $category->term_id ); ?>" class="item-link category-link" id="cat-<?php echo $category->term_id; ?>">
+                      <?php echo $category->name; ?>
+                    </a>
+                  </li> <!-- .list-item.category -->
+                <?php } // Ends 'Uncategorised' conditional
+                } // Ends category foreach ?>
+              </ul> <!-- .taxonomy-list -->
 
-            /**
-             * Checks if the @param array $tags exists.
-             */
-            if ( !empty( $tags ) && count( $tags ) > 0 ){
-          ?>
+            <?php } else { } // Ends category conditional ?>
+          </section> <!-- #post-categories -->
 
-            <h3 class="section-title title-tags">Tagged with:</h3>
+          <section id="post-tags" class="taxonomy-section section-tags">
+            <?php
+              /**
+               * Gets the tags for this post.
+               * If no ID number is declared, the function uses this post's ID number.
+               */
+              $tags = get_the_tags();
 
-            <ul class="taxonomy-list tags">
-              <?php foreach( $tags as $tag ) { ?>
-                <li class="list-item tag">
-                  <a href="<?php echo get_tag_link( $tag->term_id ); ?>" class="item-link tag-link" id="tag-<?php echo $tag->term_id; ?>" title="<?php echo $tag->name; ?>">
-                    <?php echo $tag->name; ?>
-                  </a>
-                </li> <!-- .list-item.tag -->
-              <?php } // Ends tag foreach ?>
-            </ul> <!-- .taxonomy-list.tags -->
+              /**
+               * Checks if the @param array $tags exists.
+               */
+              if ( !empty( $tags ) && count( $tags ) > 0 ){
+            ?>
 
-          <?php } else { } // Ends tag conditional ?>
-        </section> <!-- #post-tags -->
+              <h3 class="section-title title-tags">Tagged with:</h3>
 
-        <section id="post-navigation" class="navigation post-links">
-          <div class="previous_link"><?php previous_post_link('Previous link: %link') ?></div>
-          <div class="next_link"><?php next_post_link('Next link: %link') ?></div>
-        </section> <!-- #post-navigation -->
+              <ul class="taxonomy-list tags">
+                <?php foreach( $tags as $tag ) { ?>
+                  <li class="list-item tag">
+                    <a href="<?php echo get_tag_link( $tag->term_id ); ?>" class="item-link tag-link" id="tag-<?php echo $tag->term_id; ?>" title="<?php echo $tag->name; ?>">
+                      <?php echo $tag->name; ?>
+                    </a>
+                  </li> <!-- .list-item.tag -->
+                <?php } // Ends tag foreach ?>
+              </ul> <!-- .taxonomy-list.tags -->
 
-        <section id="post-comments" class="comments">
-          <?php comments_template(); ?>
-        </section> <!-- #post-comments -->
+            <?php } else { } // Ends tag conditional ?>
+          </section> <!-- #post-tags -->
 
-      </article> <!-- .post-content -->
+          <section id="post-navigation" class="navigation post-links">
+            <div class="previous_link"><?php previous_post_link('Previous link: %link') ?></div>
+            <div class="next_link"><?php next_post_link('Next link: %link') ?></div>
+          </section> <!-- #post-navigation -->
 
-    </main> <!-- #post-content -->
+          <section id="post-comments" class="comments">
+            <?php comments_template(); ?>
+          </section> <!-- #post-comments -->
 
-    <aside id="blog-sidebar" class="col-4">
-      <?php get_sidebar(); ?>
-    </aside> <!-- #blog-sidebar -->
+        </article> <!-- .post-content -->
+
+      </main> <!-- #post-content -->
+
+      <aside id="blog-sidebar" class="col-4">
+        <?php get_sidebar(); ?>
+      </aside> <!-- #blog-sidebar -->
+
+    </div>
 
   </section> <!-- #post-{post_id} -->
 <?php 

@@ -28,7 +28,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     </div> <!-- .container -->
   </section> <!-- #post-title -->
 
-  <section id="post-<?php the_ID(); ?>" class="single-post container">
+  <section id="post-<?php the_ID(); ?>" class="single-post container page-container">
     <main id="post-content" <?php post_class() ?>>
 
       <?php if ( has_post_thumbnail() ) {
