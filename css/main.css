@@ -98,6 +98,7 @@ img{ border: none; max-width: 100%; height: auto; }
 .container{ max-width: 1250px; margin: 0 auto; }
 #page-wrap{ display: flex; min-height: 100vh; flex-direction: column; }
 #main-body{ flex: 1; }
+.page-container{ padding-top: 60px; padding-bottom: 60px; }
 
 /* Blockquote */
 .entry blockquote{ position: relative; margin: 40px 20px; padding: 40px; background-color: #EEE; border: solid 15px #EEE; box-sizing: content-box; }
@@ -150,7 +151,7 @@ a img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
 }
 
 /* Footer */
-#site-footer{ background-color: #e5e5e5; padding: 24px 0; }
+#site-footer{ background-color: #f0f0f0; padding: 24px 0; }
 /* Main Footer Bar */
 #site-footer #main-footer .footer-sidebar{ padding: 0; }
 #site-footer #main-footer .footerbar-wrap{ padding: 15px; }
@@ -160,8 +161,10 @@ a img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
 #site-footer #footer-copyright .login{ text-align: right; }
 
 /* Page Title */
-.page-title{ min-height: 350px; display: flex; flex-direction: column; justify-content: center; background-color: #e5e5e5; }
+.page-title{ min-height: 350px; display: flex; flex-direction: column; justify-content: center; background-color: #f0f0f0; }
 .page-title h1, .page-title .title{ padding: 24px 15px; font-size: 3.5rem; }
+.page-title .post-meta{ padding: 0 15px 15px; text-align: center; }
+.page-title .post-meta .meta-divider{ padding: 0 8px; }
 
 /* Post Meta */
 .postMeta p, .postMeta a{ font-size: 14px; }
@@ -170,7 +173,6 @@ a img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
 
 /* Blog */
 /* Archive */
-#blog-archive{ padding: 60px 0; }
 #blog-archive .blog-posts .featured-image{ background-size: cover; background-repeat: no-repeat; background-position: center; padding-bottom: 65.7%; margin: 0 0 24px; border-radius: 3px; }
 #blog-archive .blog-posts .post{ margin-bottom: 32px; }
 #blog-archive .blog-posts .grid-post .post-title{ font-size: 1.35rem; }
@@ -213,16 +215,35 @@ a img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
 .single-post #post-comments #allowed_tags .allowed-tag{ padding: 5px 9px; border-radius: 4px; margin: 0 4px 6px 0; font-size: 0.855rem; background-color: #CFCFCF; white-space: nowrap; }
 
 /* Single Page */
+#main-body .featured-image.full-width{ background-size: cover; background-position: center; background-repeat: no-repeat; margin: 0; height: 100vh; }
+
+/* Search Form */
+#searchform .form-wrap{ display: flex; flex-direction: row; }
+#searchform .form-wrap #s{ flex: 1; margin: 0; border: solid 1px #CCC; }
+#searchform .form-wrap #searchsubmit{ margin: 0; border: none; background-color: #910611; color: #FFF; text-align: center; }
 
 /* Sidebar */
-#sidebar .widget .widget-title, #siteFooter .footerCol .widget .widget-title{ font-size: 21px; font-weight: 800; }
+#sidebar .widget .widget-title, #site-footer .footer-sidebar .widget .widget-title{ font-size: 21px; font-weight: 800; }
 #sidebar .widget{ margin-bottom: 24px; }
+/* Widget */
+#sidebar .widget .widget-title .icon{ width: 24px; padding: 0 5px 0 0; box-sizing: content-box; text-align: center; }
+#sidebar .widget .widget-list{ list-style: none; margin: 0; padding: 0; }
+#sidebar .widget .widget-list .icon, #sidebar .widget .widget-list .label{ line-height: 28px; }
+#sidebar .widget .widget-list .icon{ width: 28px; text-align: center; font-size: 1.2rem; }
+#sidebar .widget .meta-links .wpadmin-link .icon{ color: #d54e21; }
+#sidebar .widget .meta-links .loginout-link .icon{ color: #464646; }
+#sidebar .widget .meta-links .wporg-link .icon{ color: #21759b; }
+#sidebar .widget .subscribe-links .icon{ font-size: 1.4rem; color: #f26522; }
+/* Search Form Sidebar */
+#sidebar #searchform .form-wrap #s, #sidebar #searchform .form-wrap #searchsubmit{ line-height: 24px; font-size: 1rem; }
+#sidebar #searchform .form-wrap #s{ padding: 8px 10px; }
+#sidebar #searchform .form-wrap #searchsubmit{ padding: 8px; width: 50px; }
 
 /* Search Results Page */
-#searchArchive article{ margin-bottom: 18px; }
-#searchArchive article .postTitle h2{ font-size: 21px; margin: 0; padding: 0 0 6px 0; }
-#searchArchive article .postPermalink a{ color: #17911f; font-size: 14px; }
-#searchArchive article .postExcerpt{ padding: 12px 0; }
+#serp-page .search-result{ padding: 0 0 24px; }
+#serp-page .search-result .post-title{ line-height: 1.2rem; }
+#serp-page .search-result .post-title a{ color: #1a0dab; font-size: 1.5rem; text-decoration: none; }
+#serp-page .search-result .post-permalink a{ color: #006621; display: inline-block; line-height: 30px; }
 
 /* Portfolio - Custom Post Type */
 /* Archive */
@@ -310,6 +331,11 @@ a img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
 @media only screen and (max-width: 800px){
   /* Layout */
   .container{ padding: 0 10px; }
+
+  /* Page Title */
+  .page-title .post-meta .meta-item{ display: block; }
+  .page-title .post-meta .posted_onby{ padding-bottom: 10px; }
+  .page-title .post-meta .meta-divider{ display: none; }
   
   /* Header */
   /* Logo */

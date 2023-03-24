@@ -20,7 +20,7 @@
       <h1><?php echo _x( 'Portfolio', 'portfolio archive title', 'zero-theme' ); ?></h1>
     </div> <!-- .container -->
   </section> <!-- #archive-title -->
-  <section id="portfolio-archive" class="portfolio-archive archive-page">
+  <section id="portfolio-archive" class="portfolio-archive archive-page page-container">
     <div class="container">
       <main id="archive-content" class="projects row">
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
