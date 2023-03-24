@@ -16,7 +16,7 @@
   get_header();
   if ( have_posts() ) : while ( have_posts() ) : the_post(); 
 ?>
-  <section id="post-title" class="post-title single-title">
+  <section id="post-title" class="post-title page-title single-title">
     <div class="container">
       <h1><?php the_title(); ?></h1>
     </div> <!-- .container -->

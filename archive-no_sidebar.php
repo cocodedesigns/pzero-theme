@@ -1,9 +1,9 @@
 <?php 
 /**
- * Blog Archive Template (two columns, with sidebar)
+ * Blog Archive Template (single column, without sidebar)
  * @package WordPress
  * @subpackage Project_Zero
- * @since 0.1
+ * @since 0.3
  * 
  * This is a catch-all archive template for any archive pages that do not have a specialised template or a custom post template.
  * You can find out more about the Template Hierarchy at
@@ -52,7 +52,7 @@
   </section> <!-- #archive-title -->
   <section id="blog-archive" class="blog-archive archive-page">
     <div class="container row">
-      <main id="archive-content" class="blog-posts col-8">
+      <main id="archive-content" class="blog-posts">
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
           <?php 
           /**
@@ -75,9 +75,6 @@
           404
         <?php endif; // Ends the loop ?>
       </main> <!-- #archive-content -->
-      <aside id="blog-sidebar" class="col-4">
-        <?php get_sidebar(); ?>
-      </aside> <!-- #blog-sidebar -->
     </div> <!-- .container -->
   </section> <!-- #blog-archive -->
 <?php get_footer(); ?>

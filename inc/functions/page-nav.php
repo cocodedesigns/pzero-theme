@@ -1,5 +1,5 @@
 <?php
-function blogPagination() {
+function blog_archive_pagination() {
 
 	if( is_singular() )
 		return;
@@ -28,11 +28,11 @@ function blogPagination() {
 		$links[] = $paged + 1;
 	}
 
-	echo '<div class="navigation archiveNavigation clearfix"><ul class="archiveNav">' . "\n";
+	echo '<div class="navigation archive-navigation col-12"><ul>' . "\n";
 
 	/**	Previous Post Link */
 	if ( get_previous_posts_link() )
-		printf( '<li class="previousPosts nextprevLink">%s</li>' . "\n", get_previous_posts_link('<span class="fas fa-angle-left"></span>') );
+		printf( '<li class="next-prev-link">%s</li>' . "\n", get_previous_posts_link('<span class="fa fa-angle-left"></span>') );
 
 	/**	Link to first page, plus ellipses if necessary */
 	if ( ! in_array( 1, $links ) ) {
@@ -62,7 +62,7 @@ function blogPagination() {
 
 	/**	Next Post Link */
 	if ( get_next_posts_link() )
-		printf( '<li class="nextPosts nextprevLink">%s</li>' . "\n", get_next_posts_link('<span class="fas fa-angle-right"></span>') );
+		printf( '<li class="next-prev-link">%s</li>' . "\n", get_next_posts_link('<span class="fa fa-angle-right"></span>') );
 
 	echo '</ul></div>' . "\n";
 

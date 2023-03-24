@@ -1,6 +1,6 @@
 <?php 
 /**
- * Blog Index Template (single column, without sidebar)
+ * Blog Index Template (grid layout, 3 posts per row, without sidebar)
  * @package WordPress
  * @subpackage Project_Zero
  * @since 0.3
@@ -17,12 +17,12 @@
 ?>
   <section id="archive-title" class="archive-title page-title">
     <div class="container">
-      <h1><?php echo _x( 'Latest News', 'latest news archive title', 'zero-theme' ); ?></h1>
+      <h1 class="title"><?php echo _x( 'Latest News', 'latest news archive title', 'zero-theme' ); ?></h1>
     </div> <!-- .container -->
   </section> <!-- #archive-title -->
   <section id="blog-archive" class="blog-archive archive-page">
     <div class="container">
-      <main id="archive-content" class="blog-posts">
+      <main id="archive-content" class="blog-posts row">
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
           <?php 
           /**
@@ -36,9 +36,9 @@
            * @param array $args       Additional arguments to be passed through to the template.
            * 
            * The function looks for the file {$slug}-{$name}.php.
-           * In this instance, it looks for inc/parts/post-archive.php
+           * In this instance, it looks for /inc/parts/post-archive_3up.php
            */
-            get_template_part( 'inc/parts/post', 'archive' ); ?>
+            get_template_part( 'inc/parts/post', 'archive_3up' ); ?>
         <?php endwhile; // Stops looping through the posts in WP_Query ?>
           <?php blog_archive_pagination(); ?>
         <?php else : // If there are no posts in the loop ?>
