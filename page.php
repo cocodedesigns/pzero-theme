@@ -20,7 +20,7 @@
       <h1><?php the_title(); ?></h1>
     </div> <!-- .container -->
   </section> <!-- #page-title -->
-  <section id="page-<?php the_ID(); ?>" class="single-page">
+  <section id="page-<?php the_ID(); ?>" class="single-page page-container">
     <main id="page-content" <?php post_class( array('container') ); // Lists all classes for the post, and adds the 'container' CSS class ?>>
       <?php if ( has_post_thumbnail() ) {
         /**

@@ -12,6 +12,7 @@ All notable changes to this project will be documented in this file.
 * Added alternative layouts for `index.php` and `archive.php` - without sidebar and 3-up grid
 * Added Google Fonts ('Roboto') and Font Awesome `v6.3.0`
 * Added WordPress-compatible `readme.txt` file
+* Added embed files for internal posts
 
 ### Updated
 * Updated `YahnisElsts/plugin-update-checker` to `v5.0.0`

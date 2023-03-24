@@ -68,6 +68,11 @@ require_once STYLESHEETPATH . '/inc/header.php';
 require_once STYLESHEETPATH . '/inc/wp-json.php';
 
 /**
+ * Adds theme customisation options
+ */
+include_once STYLESHEETPATH . '/inc/functions/customiser.php';
+
+/**
  * Get blog pagination script - calls the blog_archive_pagination() function
  */
 include_once STYLESHEETPATH . '/inc/functions/page-nav.php';

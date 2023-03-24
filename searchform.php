@@ -16,7 +16,7 @@
 		<label class="screen-reader-text" for="s"><?php _x( 'Search for:', 'search label', 'zero-theme' ); ?></label>
 		<input type="text" value="<?php echo get_search_query(); ?>" name="s" id="s" />
 		<button type="submit" id="searchsubmit">
-      <?php echo esc_attr_x( 'Search', 'submit button', 'zero-theme' ); ?>
-    </button> <!-- #searchsubmit -->
+			<span class="fa-solid fa-magnifying-glass"></span>
+		</button> <!-- #searchsubmit -->
 	</div> <!-- .form-wrap -->
 </form> <!-- #searchform -->

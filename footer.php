@@ -45,7 +45,13 @@
       <section id="footer-copyright">
         <div class="container">
           <p class="copyright">
-            <?php echo '&copy; ' . date("Y") . " " . get_bloginfo('name') . '. All rights reserved.'; ?>
+            <?php 
+              if ( empty( get_theme_mod( 'copyright_text' ) ) ){
+                echo '&copy; ' . date("Y") . " " . get_bloginfo('name') . '. All rights reserved.';
+              } else {
+                echo get_theme_mod( 'copyright_text' ); 
+              }
+            ?>
           </p>
           <p class="login"><?php
             if ( is_user_logged_in() ){ ?>
