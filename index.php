@@ -20,7 +20,7 @@
       <h1><?php echo _x( 'Latest News', 'latest news archive title', 'zero-theme' ); ?></h1>
     </div> <!-- .container -->
   </section> <!-- #archive-title -->
-  <section id="blog-archive" class="blog-archive archive-page">
+  <section id="blog-archive" class="blog-archive archive-page page-container">
     <div class="container row">
       <main id="archive-content" class="blog-posts col-8">
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
