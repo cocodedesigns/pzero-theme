@@ -18,7 +18,23 @@
 ?>
   <section id="post-title" class="post-title page-title single-title">
     <div class="container">
-      <h1><?php the_title(); ?></h1>
+      <h1 class="post-title"><?php the_title(); ?></h1>
+      <p class="post-meta">
+        <span class="posted_onby meta-item">Posted on <a href="<?php the_permalink(); ?>"><?php echo get_the_date('F j, Y', '', ''); ?></a> by <?php the_author_posts_link(); ?></span>
+        <span class="meta-divider">|</span>
+        <?php if ( comments_open() ){ ?>
+        <span class="comments-enabled meta-item">
+          <?php
+            $number = (int) get_comments_number( get_the_ID() );
+            comments_popup_link( 'Leave a comment', '1 comment', '% comments', '', '');
+          ?>
+        </span>
+        <?php } else { ?>
+        <span class="comments-disabled meta-item">
+          Comments disabled
+        </span>
+        <?php } ?>
+      </p>
     </div> <!-- .container -->
   </section> <!-- #post-title -->
 
