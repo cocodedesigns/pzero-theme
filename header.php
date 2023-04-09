@@ -1,22 +1,47 @@
 
+<?php
+/**
+ * Header Template
+ * @package WordPress
+ * @subpackage Project_Zero
+ * @since 0.1
+ * 
+ * This file is called with get_header().
+ * Save this file as header-{filename}.php to save a specialised footer. You can call it with get_header('filename').
+ * 
+ * For more information, check out
+ * @link https://developer.wordpress.org/reference/functions/get_header/
+ */
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
   <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
-  <?php if (is_search()) { ?>
+  <?php
+  /**
+   * Adds meta robots on search.php
+   */
+  if ( is_search() ) { ?>
       <meta name="robots" content="noindex, nofollow" />
   <?php } ?>
-  <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
+  <?php 
+  /**
+   * Adds comment-reply script for singular pages (single.php, page.php, etc.)
+   */
+  if ( is_singular() ){
+    wp_enqueue_script( 'comment-reply' );
+  } 
+  ?>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#252525" />
+  <meta name="theme-color" content="<?php echo get_theme_mod('theme_color'); ?>" />
   <title><?php wp_title(); ?></title>
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-  <div id="pageWrap">
-    <header id="siteHeader">
-      <div class="container">
-        <div id="headerLogo">
+  <div id="page-wrap">
+    <header id="site-header">
+      <div class="container row">
+        <figure id="logo">
           <a href="<?php echo get_option('home'); ?>/" title="<?php bloginfo('name'); ?>">
           <?php 
             $logo_id = get_theme_mod( 'custom_logo' );
@@ -29,23 +54,21 @@
             <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/project-zero-logo.png" width="300" />
           <?php } ?>
           </a>
-        </div>
-        <nav id="siteMenu">
-          <div class="menuContainer">
-            <?php wp_nav_menu( array('theme_location' => 'header_menu', 'container_class' => 'menuWrap' ) ); ?>
+        </figure> <!-- #logo -->
+        <figure id="mobile-menu">
+          <label for="menu-check">
+            <input type="checkbox" id="menu-check" name="menu-check" /> 
+            <div class="burger menu button">
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </div> <!-- .menu -->
+          </label>
+        </figure> <!-- #mobile-menu -->
+        <nav id="header-menu">
+          <div class="menu-container">
+            <?php wp_nav_menu( array('theme_location' => 'header_menu', 'container_class' => 'menuwrap' ) ); ?>
           </div>
-        </nav>
-        <div id="menutoggle">
-          <a href="#openmenu"><span class="fas fa-bars"></span></a>
-        </div>
-      </div>
-    </header>
-    <script>
-      $(document).ready(function(){
-          $('#menutoggle a, #toggle_touchClose').click(function(e){
-              e.preventDefault();
-              $('header nav').toggleClass('show');
-          });
-      });
-    </script>
-    <main id="mainBody">
+        </nav> <!-- #sitemenu -->
+      </div> <!-- .container -->
+    </header> <!-- #siteheader -->
+    <main id="main-body">
