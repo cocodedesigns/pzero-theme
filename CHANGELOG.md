@@ -1,7 +1,7 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## [0.3] - 2023-01-26
+## [0.3] - 2023-04-09
 ### Added
 * Added `theme.json` file
 * Added custom post type template (go to plugin)
