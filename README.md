@@ -1,8 +1,8 @@
 # Legend has it ...
 Long ago, in the before times (around about 2019), a young Mage skilled in the craft of Pressing Words became aware of others looking to embark on the journey of learning this powerful magicks.  He sought to create an aide, a guide for beginners taking their first steps on the path to their development.  This guide became known as "Project Zero" and would grow and evolve to respect and hold true two of the Prime Dieties: Sehanine, the Moonweaver; and Avandra, the Changebringer.
 
-[![GitHub license](https://img.shields.io/github/license/cocodedesigns/cocode-zero?style=for-the-badge)](https://raw.githubusercontent.com/cocodedesigns/cocode-zero/master/LICENSE.md)
-![GitHub release](https://img.shields.io/github/release/cocodedesigns/cocode-zero?style=for-the-badge)
+[![GitHub license](https://img.shields.io/github/license/cocodedesigns/pzero-theme?style=for-the-badge)](https://raw.githubusercontent.com/cocodedesigns/pzero-theme/master/LICENSE.md)
+![GitHub release](https://img.shields.io/github/release/cocodedesigns/pzero-theme?style=for-the-badge)
 
 ## New name, who dis?
 What started as a quick beginner theme for me to spin up for a client project has now become a standalone project to help other WordPress developers to create themes quickly.  Project Zero now comprises of a theme and a plugin which can work together and utilise a number of WordPress best practices.  It is from the most recent build of the theme that the plugin was spawned.
