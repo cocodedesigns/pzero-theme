@@ -27,4 +27,7 @@ This theme has been created with thanks to a number of different projects. These
 
 This means that this theme can be shared and ported over to different websites, including commercial websites. Other works and plugins used as part of this theme are licensed under their own agreements.
 
-To see a log of all the updates made to this theme, view the CHANGELOG.  We recommend maintaining a CHANGELOG file for your own theme so you can keep track of changes you have made. This will also show your client what progress you have made on work.
+To see a log of all the updates made to your theme, view the CHANGELOG.  We recommend maintaining a CHANGELOG file for your own theme so you can keep track of changes you have made. This will also show your client what progress you have made on work.
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fcocodedesigns%2Fpzero-theme.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fcocodedesigns%2Fpzero-theme?ref=badge_large)
